@@ -61,22 +61,47 @@
     footer { margin-top: 4rem; font-size: 0.7rem; letter-spacing: 0.2em; color: rgba(232,228,220,0.5); }
     code { color: #c9a84c; }
 
-    /* Loader overlay */
-    #splash { position: fixed; inset: 0; z-index: 100; background: #06070a; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: opacity .6s ease; }
+    /* ---- Loader overlay ---- */
+    #splash { position: fixed; inset: 0; z-index: 100; background: #06070a; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: opacity .7s ease; overflow: hidden; }
     #splash.gone { opacity: 0; pointer-events: none; }
+    #splash .kicker { font-size: 0.6rem; letter-spacing: 0.55em; color: #00e5c8; opacity: 0.7; margin-bottom: 0.5rem; }
     #splash .label { font-size: clamp(1rem, 2.4vw, 1.6rem); letter-spacing: 0.18em; font-weight: 700; }
-    #splash .sub { font-size: 0.7rem; letter-spacing: 0.3em; color: rgba(232,228,220,0.55); margin-top: 0.4rem; }
-    #splash .bar { margin-top: 1.4rem; width: min(620px, 80vw); height: 2px; background: rgba(232,228,220,0.12); position: relative; overflow: hidden; }
-    #splash .bar::after { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 0%; background: #00e5c8; animation: fill 2.2s ease-out forwards; }
+    #splash .sub { font-size: 0.65rem; letter-spacing: 0.28em; color: rgba(232,228,220,0.45); margin-top: 0.35rem; }
+    #splash .bar-wrap { margin-top: 1.6rem; width: min(680px, 84vw); }
+    #splash .bar { height: 1px; background: rgba(232,228,220,0.1); position: relative; overflow: hidden; }
+    #splash .bar::after { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 0%; background: #00e5c8; box-shadow: 0 0 8px rgba(0,229,200,.6); animation: fill 2.8s cubic-bezier(.4,0,.2,1) forwards; }
+    #splash .bar-labels { display: flex; justify-content: space-between; margin-top: 0.4rem; font-size: 0.55rem; letter-spacing: 0.25em; color: rgba(232,228,220,0.3); }
     @keyframes fill { to { width: 100%; } }
+
+    /* Seal grid inside splash */
+    #splash-seals {
+      position: absolute; inset: 0; display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 8px; padding: 8px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 30%, rgba(0,0,0,0.12) 50%, rgba(0,0,0,0.55) 70%, #000 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 30%, rgba(0,0,0,0.12) 50%, rgba(0,0,0,0.55) 70%, #000 100%);
+      pointer-events: none; overflow: hidden;
+    }
+    #splash-seals .s { aspect-ratio:1; opacity:0; animation: seal-in 1.2s ease-out forwards; }
+    #splash-seals .s svg { width:100%; height:100%; display:block; }
+    @keyframes seal-in { 0%{opacity:0;transform:scale(.88)} 60%{opacity:.7} 100%{opacity:.22;transform:scale(1)} }
+
+    /* Center HUD on top of seals */
+    #splash-hud { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center; }
   </style>
 </head>
 <body class="scanlines">
   <div id="splash" role="status" aria-label="loading">
-    <div style="font-size: 0.7rem; letter-spacing: 0.45em; opacity: 0.7; margin-bottom: 0.6rem;">// CYBERCARD SYSTEM BOOT //</div>
-    <div class="label">ESTABLISHING SECURE CHANNEL</div>
-    <div class="sub">CYBERCARD // FLLC.NET // CONSENT-FIRST TELEMETRY</div>
-    <div class="bar" aria-hidden="true"></div>
+    <div id="splash-seals" aria-hidden="true"></div>
+    <div id="splash-hud">
+      <div class="kicker">// CYBERCARD SYSTEM BOOT //</div>
+      <div class="label">ESTABLISHING SECURE CHANNEL</div>
+      <div class="sub">CYBERCARD &nbsp;·&nbsp; FLLC.NET &nbsp;·&nbsp; CONSENT-FIRST TELEMETRY</div>
+      <div class="bar-wrap">
+        <div class="bar" aria-hidden="true"></div>
+        <div class="bar-labels"><span>AUTH</span><span>FINGERPRINT</span><span>TELEMETRY</span><span>READY</span></div>
+      </div>
+    </div>
   </div>
 
   <main>
@@ -161,7 +186,7 @@
 
   <script>
     // Auto-dismiss splash
-    setTimeout(() => document.getElementById('splash').classList.add('gone'), 2400);
+    setTimeout(() => document.getElementById('splash').classList.add('gone'), 3200);
 
     // ---- Seal renderer ----
     const AGENCIES = [
@@ -327,6 +352,16 @@
     grid.innerHTML = AGENCIES.map((a, i) =>
       `<div class="seal" style="animation-delay:${(i%18)*60}ms">${sealSVG(a, i)}</div>`
     ).join('');
+
+    // ---- Populate background splash seals (full constellation) ----
+    const splashGrid = document.getElementById('splash-seals');
+    if (splashGrid) {
+      // Use all agencies + repeat to fill the viewport
+      const fill = [...AGENCIES, ...AGENCIES, ...AGENCIES];
+      splashGrid.innerHTML = fill.map((a, i) =>
+        `<div class="s" style="animation-delay:${(i * 38) % 1400}ms;animation-duration:${1.1 + (i % 7) * 0.12}s">${sealSVG(a, i + 1000)}</div>`
+      ).join('');
+    }
   </script>
 </body>
 </html>

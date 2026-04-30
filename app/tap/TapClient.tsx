@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { AgencyLoader } from '../components/AgencyLoader'
 import type { CardConfig } from './page'
 
 interface TapClientProps {
@@ -61,12 +62,12 @@ export default function TapClient({ config, utm }: TapClientProps) {
 
   if (state === 'loading') {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#0a0a0c]">
-        <div className="flex flex-col items-center gap-4">
-          <div className="h-8 w-8 animate-spin rounded-full border border-[#00e5c8] border-t-transparent" />
-          <p className="font-mono text-xs uppercase tracking-widest text-[#6b6b72]">Authenticating card</p>
-        </div>
-      </div>
+      <AgencyLoader
+        label="ESTABLISHING SECURE CHANNEL"
+        subline={`CYBERCARD // ${typeof window !== 'undefined' ? window.location.hostname.toUpperCase() : 'FLLC.NET'} // CONSENT-FIRST TELEMETRY`}
+        minDurationMs={1800}
+        onDone={() => {/* tap result resolves it, not the timer */}}
+      />
     )
   }
 

@@ -89,18 +89,18 @@ CYBERCARD/
 
 ```mermaid
 flowchart TD
-  Card["Premium Metal CyberCard<br/>NTAG216 + QR + AR marker"] --> Trigger[NFC / QR / AR Trigger]
-  Trigger --> Tap[/tap?card_id=metal_v1]
-  Tap --> Api[Next.js API Layer]
-  Api --> DB[(Supabase Postgres\nRLS + audit_events)]
-  Api --> Email[Resend\nfirst tap + returning tap]
-  Api --> VCard[vCard + LinkedIn]
-  Api --> Challenge[DEFCON Challenge\nreward JWT]
-  DB --> Dashboard[Dashboard\nMRR + tap stream + contacts]
+  Card["Premium Metal CyberCard<br/>NTAG216 + QR + AR marker"] --> Trigger["NFC / QR / AR Trigger"]
+  Trigger --> Tap["/tap?card_id=metal_v1"]
+  Tap --> Api["Next.js API Layer"]
+  Api --> DB[("Supabase Postgres<br/>RLS + audit_events")]
+  Api --> Email["Resend<br/>first tap + returning tap"]
+  Api --> VCard["vCard + LinkedIn"]
+  Api --> Challenge["DEFCON Challenge<br/>reward JWT"]
+  DB --> Dashboard["Dashboard<br/>MRR + tap stream + contacts"]
 
-  Flipper[Flipper Zero + Wi-Fi Dev Board] --> Lab[Authorized RF/NFC/IR/iButton/Wi-Fi Lab]
-  ESP[CyberCard Device\nESP32-S3 + CC1101 + PN5180] --> Lab
-  Lab --> Telemetry[Consent Lab Telemetry]
+  Flipper["Flipper Zero + Wi-Fi Dev Board"] --> Lab["Authorized RF/NFC/IR/iButton/Wi-Fi Lab"]
+  ESP["CyberCard Device<br/>ESP32-S3 + CC1101 + PN5180"] --> Lab
+  Lab --> Telemetry["Consent Lab Telemetry"]
   Telemetry --> DB
 ```
 
@@ -189,8 +189,8 @@ flowchart LR
   GPIO --> WDB["Wi-Fi Dev Board<br/>ESP32-S2/S3"]
   WDB --> AP["Owned Lab AP<br/>CyberCard-Setup"]
   WDB --> Portal["Consent Portal<br/>profile + vCard + telemetry notice"]
-  Portal --> TapAPI[/api/tap]
-  TapAPI --> Audit[(Supabase audit_events)]
+  Portal --> TapAPI["/api/tap"]
+  TapAPI --> Audit[("Supabase audit_events")]
 ```
 
 The Wi-Fi board path is for owned-network demos: show why rogue SSIDs and captive portals are risky by building a transparent, consent-first portal that states what it collects and routes users to the normal `/tap` workflow. No credential capture. No deceptive login clones.
@@ -587,17 +587,17 @@ CyberFlipper is the capability layer around hardware you already own: Flipper Ze
 
 ```mermaid
 flowchart TD
-  FZ[Flipper Zero] --> NFC[NFC/RFID demos]
-  FZ --> SG[Sub-GHz receive/lab files]
-  FZ --> IR[IR line-of-sight demos]
-  FZ --> IB[iButton/1-Wire demos]
-  WIFI[Wi-Fi Dev Board<br/>ESP32-based] --> PORTAL[Consent captive portal demo]
-  WIFI --> SCAN[Owned-network Wi-Fi assessment notes]
-  CARD[CyberCard] --> TAP[/tap identity funnel]
-  CARD --> QR[QR/NFC/AR scannables]
-  TAP --> SOC[Supabase audit + dashboard]
-  NFC --> TAP
-  IR --> TAP
+  FZ["Flipper Zero"] --> FNFC["NFC/RFID demos"]
+  FZ --> SG["Sub-GHz receive/lab files"]
+  FZ --> FIR["IR line-of-sight demos"]
+  FZ --> IB["iButton/1-Wire demos"]
+  WIFI["Wi-Fi Dev Board<br/>ESP32-based"] --> PORTAL["Consent captive portal demo"]
+  WIFI --> SCAN["Owned-network Wi-Fi assessment notes"]
+  CYBERCARD["CyberCard"] --> TAP["/tap identity funnel"]
+  CYBERCARD --> QR["QR/NFC/AR scannables"]
+  TAP --> SOC["Supabase audit + dashboard"]
+  FNFC --> TAP
+  FIR --> TAP
   IB --> TAP
   PORTAL --> TAP
 ```
@@ -692,14 +692,14 @@ Flow:
 
 ```mermaid
 flowchart LR
-  WEBHOOK[n8n webhook] --> CARD[resolve card in Supabase]
-  CARD --> FIRST{first tap?}
-  FIRST -->|yes| DRAFT[draft follow-up]
-  FIRST -->|no| LOG[log returning contact]
-  DRAFT --> REVIEW[queue for review]
-  REVIEW --> RESEND[Resend email]
-  LOG --> AUDIT[audit row]
-  RESEND --> AUDIT
+  WEBHOOK["n8n webhook"] --> RESOLVE["resolve card in Supabase"]
+  RESOLVE --> FIRST{"first tap?"}
+  FIRST -->|yes| DRAFT["draft follow-up"]
+  FIRST -->|no| LOG["log returning contact"]
+  DRAFT --> REVIEW["queue for review"]
+  REVIEW --> RESEND_OUT["Resend email"]
+  LOG --> AUDIT["audit row"]
+  RESEND_OUT --> AUDIT
 ```
 
 ## Firmware Build
@@ -834,21 +834,21 @@ The CyberCard wallet device is a credit-card-thick PCB designed to carry the ful
 flowchart LR
   USB[USB-C 5V] --> PMIC[BQ24074 charger + LDO 3.3V]
   BAT[LiPo 3.7V 250 mAh] --> PMIC
-  PMIC --> MCU[ESP32-S3-WROOM-1U<br/>240 MHz dual-core, Wi-Fi 2.4 GHz, BLE 5.0]
-  MCU -->|SPI0| NFC[PN5180 13.56 MHz NFC reader]
-  MCU -->|I2C| EMU[NTAG216 NFC emulation IC]
-  NFC --> COIL[(13.56 MHz coil antenna)]
+  PMIC --> MCU["ESP32-S3-WROOM-1U<br/>240 MHz dual-core, Wi-Fi 2.4 GHz, BLE 5.0"]
+  MCU -->|SPI0| NFC["PN5180 13.56 MHz NFC reader"]
+  MCU -->|I2C| EMU["NTAG216 NFC emulation IC"]
+  NFC --> COIL[("13.56 MHz coil antenna")]
   EMU --> COIL
-  MCU -->|SPI1| RF[CC1101 sub-GHz radio<br/>300-348 / 387-464 / 779-928 MHz]
-  RF --> SUBANT[(F-antenna or u.FL whip)]
-  MCU -->|GPIO| IRTX[IR LED 940 nm]
-  MCU -->|GPIO| IRRX[IR demod 38 kHz]
-  MCU -->|SDIO| SD[microSD card]
-  MCU -->|I2C| DISP[OLED 128x64 / e-ink 1.54"]
-  MCU -->|GPIO| LEDS[3x WS2812 status LEDs]
-  MCU -->|GPIO| BTN[Center tactile switch]
-  MCU -->|USB OTG| HID[USB HID BadUSB demo class]
-  MCU -->|UART| DBG[Serial debug header]
+  MCU -->|SPI1| RF["CC1101 sub-GHz<br/>300-348 / 387-464 / 779-928 MHz"]
+  RF --> SUBANT[("F-antenna or u.FL whip")]
+  MCU -->|GPIO| IRTX["IR LED 940 nm"]
+  MCU -->|GPIO| IRRX["IR demod 38 kHz"]
+  MCU -->|SDIO| SD["microSD card"]
+  MCU -->|I2C| DISP["OLED 128x64 / e-ink 1.54in"]
+  MCU -->|GPIO| LEDS["3x WS2812 status LEDs"]
+  MCU -->|GPIO| BTN["Center tactile switch"]
+  MCU -->|"USB OTG"| HID["USB HID BadUSB demo class"]
+  MCU -->|UART| DBG["Serial debug header"]
 ```
 
 ### 3. Pin Map (ESP32-S3-WROOM-1U)
