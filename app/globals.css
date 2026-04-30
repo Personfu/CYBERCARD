@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #06070a;
+  color: #e8e4dc;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background: #06070a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}

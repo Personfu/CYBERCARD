@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="CyberCard 4-layer PCB stackup">
+  <title>CyberCard — PCB Stackup (4-layer)</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0c"/><stop offset="1" stop-color="#111114"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="rgba(0,229,200,0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <rect width="960" height="540" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="3" fill="#6b6b72">
+    <text x="40" y="38">PERSONFU // FLLC.NET</text>
+    <text x="920" y="38" text-anchor="end">CYBERCARD / PCB_STACKUP_4L_v1</text>
+  </g>
+
+  <text x="40" y="78" font-family="ui-monospace, Consolas, monospace" font-size="20" letter-spacing="6" fill="#f5f5f7">PCB STACKUP — 4 LAYER · 0.84 MM · IMPEDANCE-CONTROLLED</text>
+  <text x="40" y="100" font-family="ui-monospace, Consolas, monospace" font-size="11" letter-spacing="3" fill="#00e5c8" opacity="0.8">FR-4 TG170 · ENIG · 0.5 OZ OUTER / 1 OZ INNER · 50Ω SE / 100Ω LVDS · 13.56 MHZ COIL ON L1</text>
+
+  <!-- Stackup -->
+  <g transform="translate(60 140)">
+    <!-- L1 -->
+    <g>
+      <rect width="700" height="36" fill="rgba(0,229,200,0.18)" stroke="rgba(0,229,200,0.6)"/>
+      <text x="14" y="23" font-family="ui-monospace, Consolas, monospace" font-size="11" letter-spacing="3" fill="#00e5c8">L1 · TOP COPPER (0.5 oz / 17.5 µm)</text>
+      <text x="686" y="23" text-anchor="end" font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="2" fill="#9da0a8">NFC SPIRAL · MCU · ANTENNAS · TEST PADS</text>
+    </g>
+    <!-- prepreg -->
+    <g transform="translate(0 36)">
+      <rect width="700" height="20" fill="rgba(201,168,76,0.10)" stroke="rgba(201,168,76,0.35)"/>
+      <text x="14" y="14" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#c9a84c">PREPREG · 7628 · 0.18 MM · ε_r 4.4</text>
+    </g>
+    <!-- L2 GND -->
+    <g transform="translate(0 56)">
+      <rect width="700" height="32" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)"/>
+      <text x="14" y="20" font-family="ui-monospace, Consolas, monospace" font-size="11" letter-spacing="3" fill="#f5f5f7">L2 · GND PLANE (1 oz)</text>
+      <text x="686" y="20" text-anchor="end" font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="2" fill="#9da0a8">SOLID — RF RETURN · NFC ANTI-PAD CUTOUT UNDER COIL</text>
+    </g>
+    <!-- core -->
+    <g transform="translate(0 88)">
+      <rect width="700" height="40" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.15)"/>
+      <text x="14" y="24" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#9da0a8">CORE · FR-4 TG170 · 0.40 MM · ε_r 4.3</text>
+    </g>
+    <!-- L3 PWR -->
+    <g transform="translate(0 128)">
+      <rect width="700" height="32" fill="rgba(201,168,76,0.18)" stroke="rgba(201,168,76,0.6)"/>
+      <text x="14" y="20" font-family="ui-monospace, Consolas, monospace" font-size="11" letter-spacing="3" fill="#c9a84c">L3 · PWR PLANE (1 oz)</text>
+      <text x="686" y="20" text-anchor="end" font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="2" fill="#9da0a8">3V3 / VBAT SPLIT · STAR FROM BUCK · π-FILTER</text>
+    </g>
+    <!-- prepreg -->
+    <g transform="translate(0 160)">
+      <rect width="700" height="20" fill="rgba(201,168,76,0.10)" stroke="rgba(201,168,76,0.35)"/>
+      <text x="14" y="14" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#c9a84c">PREPREG · 7628 · 0.18 MM</text>
+    </g>
+    <!-- L4 -->
+    <g transform="translate(0 180)">
+      <rect width="700" height="36" fill="rgba(0,229,200,0.10)" stroke="rgba(0,229,200,0.45)"/>
+      <text x="14" y="23" font-family="ui-monospace, Consolas, monospace" font-size="11" letter-spacing="3" fill="#00e5c8">L4 · BOTTOM COPPER (0.5 oz)</text>
+      <text x="686" y="23" text-anchor="end" font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="2" fill="#9da0a8">QR ART · BATT PADS · DEBUG TAGS · BOUNDARY SCAN</text>
+    </g>
+    <!-- soldermask + silk + finish -->
+    <g transform="translate(0 216)">
+      <rect width="700" height="14" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.1)"/>
+      <text x="14" y="11" font-family="ui-monospace, Consolas, monospace" font-size="8" letter-spacing="2" fill="#9da0a8">SOLDERMASK MATTE BLACK · LPI 25 µM · WHITE SILK</text>
+    </g>
+
+    <!-- vias -->
+    <g stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.4)">
+      <line x1="120" y1="0" x2="120" y2="216"/><circle cx="120" cy="0" r="2.5"/><circle cx="120" cy="216" r="2.5"/>
+      <line x1="240" y1="36" x2="240" y2="160"/><circle cx="240" cy="36" r="2.5"/><circle cx="240" cy="160" r="2.5"/>
+      <line x1="360" y1="0" x2="360" y2="128"/><circle cx="360" cy="0" r="2.5"/><circle cx="360" cy="128" r="2.5"/>
+      <line x1="480" y1="56" x2="480" y2="216"/><circle cx="480" cy="56" r="2.5"/><circle cx="480" cy="216" r="2.5"/>
+      <line x1="600" y1="0" x2="600" y2="216"/><circle cx="600" cy="0" r="2.5"/><circle cx="600" cy="216" r="2.5"/>
+    </g>
+  </g>
+
+  <!-- Right legend -->
+  <g transform="translate(800 140)" font-family="ui-monospace, Consolas, monospace" letter-spacing="2">
+    <text font-size="11" letter-spacing="3" fill="#00e5c8">LEGEND</text>
+    <g transform="translate(0 18)" font-size="9" fill="#9da0a8">
+      <rect x="0" y="0" width="14" height="10" fill="rgba(0,229,200,0.4)"/><text x="22" y="9">SIGNAL Cu</text>
+      <rect x="0" y="20" width="14" height="10" fill="rgba(255,255,255,0.4)"/><text x="22" y="29">GND PLANE</text>
+      <rect x="0" y="40" width="14" height="10" fill="rgba(201,168,76,0.55)"/><text x="22" y="49">PWR PLANE</text>
+      <rect x="0" y="60" width="14" height="10" fill="rgba(201,168,76,0.18)"/><text x="22" y="69">PREPREG/CORE</text>
+      <line x1="0" y1="86" x2="14" y2="86" stroke="#c9a84c" stroke-width="1.5"/><text x="22" y="89">PTH VIA Ø0.3</text>
+      <text x="0" y="116" fill="#00e5c8">RULES</text>
+      <text x="0" y="132">MIN TRACE 0.10 mm</text>
+      <text x="0" y="146">MIN VIA Ø 0.30 mm</text>
+      <text x="0" y="160">CTRL IMP ±10%</text>
+      <text x="0" y="174">NFC KEEP-OUT 5 mm</text>
+    </g>
+  </g>
+
+  <text x="40" y="510" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="3" fill="#6b6b72">TOTAL DIELECTRIC 0.76 MM · TOTAL Cu 100 µM · MASS ≈ 6.4 g · IPC-A-600 CLASS 2</text>
+</svg>

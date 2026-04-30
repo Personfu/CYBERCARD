@@ -1,0 +1,144 @@
+{
+  "name": "CyberCard — Tap-to-Revenue Orchestration",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "cybercard-tap",
+        "options": {
+          "responseMode": "lastNode"
+        },
+        "httpMethod": "POST"
+      },
+      "name": "Webhook · /tap event",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 300],
+      "webhookId": "cybercard-tap-trigger"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": "cards",
+        "where": "card_id = '{{ $json.body.card_id }}'",
+        "limit": 1
+      },
+      "name": "Supabase · resolve card",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [420, 300],
+      "credentials": {
+        "supabaseApi": { "id": "supabase_furulie", "name": "Furulie Supabase" }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [{ "value1": "={{ $json.is_first_tap }}", "value2": true }]
+        }
+      },
+      "name": "IF · first tap",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "model": "claude-opus-4-7",
+        "messages": {
+          "messageValues": [
+            {
+              "role": "system",
+              "content": "You are an outreach assistant for Furulie LLC. Generate a 2-sentence personal follow-up message to send via email or LinkedIn. Tone: muscular, forward-leaning, professional. Reference the city if available. Never use emojis. Sign off as Preston."
+            },
+            {
+              "role": "user",
+              "content": "New CyberCard tap from {{ $json.geo_city }}, {{ $json.geo_country }} on card {{ $json.card_id }}. UTM source: {{ $json.utm_source }}. Generate the message."
+            }
+          ]
+        },
+        "maxTokens": 200
+      },
+      "name": "Claude · draft follow-up",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [860, 200],
+      "credentials": {
+        "anthropicApi": { "id": "anthropic_furulie", "name": "Anthropic API" }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "card@fllc.net",
+        "toEmail": "preston@fllc.net",
+        "subject": "Draft follow-up · {{ $('Supabase · resolve card').item.json.card_id }} · {{ $('Webhook · /tap event').item.json.body.geo_city }}",
+        "html": "<p style='font-family:monospace;color:#00e5c8'>// auto-drafted from tap event</p><pre style='font-family:monospace;background:#0d0e13;color:#e8e4dc;padding:16px;border-radius:6px'>{{ $json.text }}</pre><p style='font-size:11px;color:#888'>Reply with [send] to dispatch via Resend, [edit] to revise.</p>"
+      },
+      "name": "Resend · review queue",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1080, 200],
+      "credentials": {
+        "smtp": { "id": "resend_smtp", "name": "Resend SMTP" }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "table": "audit_events",
+        "columns": "card_id,event_type,actor_hash,metadata",
+        "values": "={{ $('Webhook · /tap event').item.json.body.card_id }},admin_view,n8n_workflow,{ \"workflow\": \"tap-to-revenue\" }"
+      },
+      "name": "Supabase · audit row",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [860, 400],
+      "credentials": {
+        "supabaseApi": { "id": "supabase_furulie", "name": "Furulie Supabase" }
+      }
+    },
+    {
+      "parameters": {
+        "responseBody": "={{ { \"orchestrated\": true, \"draft_queued\": $('Webhook · /tap event').item.json.body.is_first_tap } }}",
+        "options": {}
+      },
+      "name": "Respond to webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1300, 300]
+    }
+  ],
+  "connections": {
+    "Webhook · /tap event": {
+      "main": [[{ "node": "Supabase · resolve card", "type": "main", "index": 0 }]]
+    },
+    "Supabase · resolve card": {
+      "main": [[{ "node": "IF · first tap", "type": "main", "index": 0 }]]
+    },
+    "IF · first tap": {
+      "main": [
+        [{ "node": "Claude · draft follow-up", "type": "main", "index": 0 }],
+        [{ "node": "Supabase · audit row", "type": "main", "index": 0 }]
+      ]
+    },
+    "Claude · draft follow-up": {
+      "main": [[{ "node": "Resend · review queue", "type": "main", "index": 0 }]]
+    },
+    "Resend · review queue": {
+      "main": [[{ "node": "Respond to webhook", "type": "main", "index": 0 }]]
+    },
+    "Supabase · audit row": {
+      "main": [[{ "node": "Respond to webhook", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  },
+  "tags": [
+    { "name": "cybercard" },
+    { "name": "production" },
+    { "name": "furulie-llc" }
+  ]
+}

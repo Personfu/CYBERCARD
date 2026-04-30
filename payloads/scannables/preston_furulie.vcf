@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Preston Furulie
+N:Furulie;Preston;;;
+ORG:Furulie LLC
+TITLE:Systems Architect / CyberCard Builder
+EMAIL;TYPE=WORK,INTERNET:preston@fllc.net
+URL:https://fllc.net/tap?card_id=metal_v1&utm_source=vcard&utm_medium=contact
+NOTE:CyberCard contact automation demo. Public contact card only.
+END:VCARD

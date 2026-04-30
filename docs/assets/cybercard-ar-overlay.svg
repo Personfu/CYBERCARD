@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" role="img" aria-label="AR overlay concept">
+  <title>CyberCard — AR Overlay Concept</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0c"/><stop offset="1" stop-color="#111114"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(0,229,200,0.05)" stroke-width="0.5"/></pattern>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="rgba(0,229,200,0.45)"/><stop offset="1" stop-color="rgba(0,229,200,0)"/></radialGradient>
+  </defs>
+  <style>
+    .h { font: 700 12px ui-monospace, Consolas, monospace; letter-spacing: 3px; fill: #f5f5f7; }
+    .s { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #9da0a8; }
+    .t { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #00e5c8; }
+    .g { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #c9a84c; }
+    .phone { fill: #0e0f12; stroke: rgba(255,255,255,0.25); stroke-width: 2; }
+    .screen { fill: #0a0a0c; stroke: rgba(0,229,200,0.45); }
+    .panel { fill: rgba(0,229,200,0.08); stroke: rgba(0,229,200,0.6); }
+    .panelG { fill: rgba(201,168,76,0.08); stroke: rgba(201,168,76,0.6); }
+  </style>
+  <rect width="1100" height="600" fill="url(#bg)"/>
+  <rect width="1100" height="600" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="3" fill="#6b6b72">
+    <text x="40" y="38">PERSONFU // FLLC.NET</text>
+    <text x="1060" y="38" text-anchor="end">CYBERCARD / AR_OVERLAY_v1</text>
+  </g>
+  <text x="40" y="76" font-family="ui-monospace, Consolas, monospace" font-size="20" letter-spacing="6" fill="#f5f5f7">AR OVERLAY — A-FRAME / WEBXR · IDENTITY HUD</text>
+
+  <!-- Phone -->
+  <g transform="translate(120 120)">
+    <rect width="320" height="440" rx="36" class="phone"/>
+    <rect x="14" y="14" width="292" height="412" rx="22" class="screen"/>
+    <!-- camera notch -->
+    <rect x="140" y="22" width="40" height="6" rx="3" fill="#3a3b40"/>
+
+    <!-- AR scene -->
+    <g transform="translate(34 60)">
+      <ellipse cx="124" cy="260" rx="120" ry="36" fill="rgba(255,255,255,0.04)"/>
+      <!-- card on table -->
+      <g transform="translate(34 232) rotate(-12)">
+        <rect width="180" height="110" rx="10" fill="#1c1d22" stroke="rgba(0,229,200,0.5)"/>
+        <text x="14" y="32" class="h" font-size="10">PRESTON FURULIE</text>
+        <text x="14" y="48" class="s">SECURITY ENGINEER</text>
+        <circle cx="146" cy="58" r="14" fill="rgba(0,229,200,0.18)" stroke="#00e5c8"/>
+      </g>
+
+      <!-- Halo above card -->
+      <ellipse cx="124" cy="170" rx="120" ry="22" fill="url(#halo)"/>
+
+      <!-- Floating panels -->
+      <g transform="translate(8 24)">
+        <rect width="120" height="56" rx="6" class="panel"/>
+        <text x="10" y="20" class="t">vCard</text>
+        <text x="10" y="36" class="s">contact · save</text>
+        <text x="10" y="48" class="s">save → wallet</text>
+      </g>
+      <g transform="translate(132 12)">
+        <rect width="116" height="56" rx="6" class="panelG"/>
+        <text x="10" y="20" class="g">CALENDLY</text>
+        <text x="10" y="36" class="s">15 min slots</text>
+        <text x="10" y="48" class="s">live availability</text>
+      </g>
+      <g transform="translate(8 100)">
+        <rect width="120" height="48" rx="6" class="panel"/>
+        <text x="10" y="20" class="t">LinkedIn</text>
+        <text x="10" y="36" class="s">@personfu</text>
+      </g>
+      <g transform="translate(132 90)">
+        <rect width="116" height="48" rx="6" class="panelG"/>
+        <text x="10" y="20" class="g">/RISK</text>
+        <text x="10" y="36" class="s">2-min posture</text>
+      </g>
+
+      <!-- Caption -->
+      <g transform="translate(0 320)">
+        <rect width="252" height="40" rx="6" fill="rgba(0,0,0,0.6)" stroke="rgba(0,229,200,0.35)"/>
+        <text x="12" y="18" class="t">● TAP DETECTED · 0xPF-01-A7F3</text>
+        <text x="12" y="32" class="s">CONSENT-FIRST · NO TRACKING</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right column - tech stack -->
+  <g transform="translate(500 120)">
+    <text class="h" font-size="14">A-FRAME / WEBXR STACK</text>
+    <g transform="translate(0 28)" class="s">
+      <text>HTML &lt;a-scene&gt; · NDEFReader API</text>
+      <text y="16">3D model: vCard plate + halo (gltf)</text>
+      <text y="32">Marker: NFC trigger or QR finder</text>
+      <text y="48">No PII rendered until consent click</text>
+    </g>
+
+    <g transform="translate(0 100)">
+      <rect width="540" height="120" rx="6" class="panel"/>
+      <text x="14" y="22" class="h">A · TRIGGER</text>
+      <g transform="translate(14 38)" class="s">
+        <text>1. Phone reads NTAG216 NDEF URL</text>
+        <text y="14">2. Browser navigates to fllc.net/tap</text>
+        <text y="28">3. Tap page detects WebXR support</text>
+        <text y="42">4. If supported → mount /ar scene</text>
+        <text y="56">5. If not → render flat HTML page</text>
+      </g>
+    </g>
+
+    <g transform="translate(0 240)">
+      <rect width="540" height="120" rx="6" class="panelG"/>
+      <text x="14" y="22" class="h" fill="#c9a84c">B · RENDER</text>
+      <g transform="translate(14 38)" class="s">
+        <text>Halo shader: glslify · time-driven · 60 fps cap</text>
+        <text y="14">Panels: A-Frame entities · raycast click</text>
+        <text y="28">Audio: 1 short cue · suppressed in silent mode</text>
+        <text y="42">Heat budget: ≤ 4 W phone · auto-degrade @ 50°C</text>
+      </g>
+    </g>
+
+    <g transform="translate(0 380)">
+      <rect width="540" height="100" rx="6" fill="rgba(255,255,255,0.025)" stroke="rgba(0,229,200,0.4)"/>
+      <text x="14" y="22" class="h">C · CONSENT &amp; FALLBACK</text>
+      <g transform="translate(14 38)" class="s">
+        <text>Consent gate: explicit "Show AR" button</text>
+        <text y="14">Permissions: camera + motion · revocable</text>
+        <text y="28">Fallback path 100% feature-parity (text + buttons)</text>
+        <text y="42">Out: no biometrics · no face capture · no upload</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="40" y="572" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="3" fill="#6b6b72">PROTOTYPE: CYBERCARD/ar/index.html · A-FRAME 1.5 · MIT · OWNED ASSETS ONLY</text>
+</svg>

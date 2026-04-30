@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" role="img" aria-label="Threat model trust boundary">
+  <title>CyberCard — Threat Model · Trust Boundaries</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0c"/><stop offset="1" stop-color="#111114"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(0,229,200,0.05)" stroke-width="0.5"/></pattern>
+    <marker id="arr1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#00e5c8"/></marker>
+  </defs>
+  <style>
+    .zone { fill: rgba(255,255,255,0.025); }
+    .untrusted { stroke: rgba(255,90,90,0.55); stroke-dasharray: 4 4; }
+    .external  { stroke: rgba(201,168,76,0.55); stroke-dasharray: 4 4; }
+    .trusted   { stroke: rgba(0,229,200,0.6); }
+    .h { font: 700 12px ui-monospace, Consolas, monospace; letter-spacing: 3px; fill: #f5f5f7; }
+    .s { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #9da0a8; }
+    .red { fill: #ff7575; }
+    .green { fill: #00e5c8; }
+    .gold { fill: #c9a84c; }
+    .arr { stroke: #00e5c8; stroke-width: 1.4; fill: none; }
+  </style>
+  <rect width="1100" height="540" fill="url(#bg)"/>
+  <rect width="1100" height="540" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="3" fill="#6b6b72">
+    <text x="40" y="38">PERSONFU // FLLC.NET</text>
+    <text x="1060" y="38" text-anchor="end">CYBERCARD / THREAT_MODEL_v1</text>
+  </g>
+  <text x="40" y="76" font-family="ui-monospace, Consolas, monospace" font-size="20" letter-spacing="6" fill="#f5f5f7">THREAT MODEL — STRIDE TRUST BOUNDARIES</text>
+
+  <!-- Untrusted -->
+  <g transform="translate(60 110)">
+    <rect width="280" height="380" rx="8" class="zone untrusted"/>
+    <text x="14" y="22" class="h red">UNTRUSTED · PUBLIC</text>
+    <g transform="translate(14 40)" class="s">
+      <text>SCAN ATTACKER · CLONE TAG</text>
+      <text y="16">RELAY · MitM · NFC SNIFF</text>
+      <text y="32">ROGUE READER · SKIMMER</text>
+      <text y="48">SOCIAL ENGINEERING</text>
+    </g>
+    <g transform="translate(14 110)">
+      <rect width="252" height="60" rx="4" fill="rgba(255,90,90,0.06)" stroke="rgba(255,90,90,0.4)"/>
+      <text x="10" y="20" class="h">PHONE / WALLET</text>
+      <text x="10" y="38" class="s">NFC reader app · browser</text>
+      <text x="10" y="52" class="s red">No secrets here</text>
+    </g>
+    <g transform="translate(14 188)">
+      <rect width="252" height="60" rx="4" fill="rgba(255,90,90,0.06)" stroke="rgba(255,90,90,0.4)"/>
+      <text x="10" y="20" class="h">RF SPECTATOR</text>
+      <text x="10" y="38" class="s">Sniffer · jammer · replay</text>
+      <text x="10" y="52" class="s red">Mitigated by counter+nonce</text>
+    </g>
+    <g transform="translate(14 266)">
+      <rect width="252" height="60" rx="4" fill="rgba(255,90,90,0.06)" stroke="rgba(255,90,90,0.4)"/>
+      <text x="10" y="20" class="h">CLONED CARD</text>
+      <text x="10" y="38" class="s">UID copy · NDEF replay</text>
+      <text x="10" y="52" class="s red">Detected by /api/challenge</text>
+    </g>
+  </g>
+
+  <!-- Boundary -->
+  <g transform="translate(380 110)">
+    <rect width="320" height="380" rx="8" class="zone trusted"/>
+    <text x="14" y="22" class="h green">TRUSTED · DEVICE</text>
+    <g transform="translate(14 40)" class="s">
+      <text>NTAG216 · PN5180 · ESP32-S3</text>
+      <text y="16">ATECC608B · BQ25180</text>
+    </g>
+    <g transform="translate(14 80)">
+      <rect width="292" height="84" rx="4" fill="rgba(0,229,200,0.05)" stroke="rgba(0,229,200,0.5)"/>
+      <text x="10" y="20" class="h">SECURE ELEMENT (ATECC608B)</text>
+      <text x="10" y="38" class="s">ECC P-256 · monotonic counters</text>
+      <text x="10" y="52" class="s">Per-tap challenge · key never leaves</text>
+      <text x="10" y="70" class="green s">STRIDE: Spoofing &amp; Tampering mitigated</text>
+    </g>
+    <g transform="translate(14 184)">
+      <rect width="292" height="84" rx="4" fill="rgba(0,229,200,0.05)" stroke="rgba(0,229,200,0.5)"/>
+      <text x="10" y="20" class="h">FIRMWARE / BOOT</text>
+      <text x="10" y="38" class="s">Secure boot · signed OTA</text>
+      <text x="10" y="52" class="s">Read-protected eFuses · JTAG off</text>
+      <text x="10" y="70" class="green s">STRIDE: Tampering &amp; EoP mitigated</text>
+    </g>
+    <g transform="translate(14 288)">
+      <rect width="292" height="64" rx="4" fill="rgba(0,229,200,0.05)" stroke="rgba(0,229,200,0.5)"/>
+      <text x="10" y="20" class="h">TAMPER · IMU + LIGHT</text>
+      <text x="10" y="38" class="s">Case-open detect · self-zeroize keys</text>
+      <text x="10" y="52" class="green s">STRIDE: DoS visibility</text>
+    </g>
+  </g>
+
+  <!-- Cloud -->
+  <g transform="translate(740 110)">
+    <rect width="320" height="380" rx="8" class="zone external"/>
+    <text x="14" y="22" class="h gold">EXTERNAL · CLOUD</text>
+    <g transform="translate(14 40)" class="s">
+      <text>FLLC.NET · SUPABASE · STRIPE · RESEND</text>
+    </g>
+    <g transform="translate(14 70)">
+      <rect width="292" height="76" rx="4" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.5)"/>
+      <text x="10" y="20" class="h">/API/TAP · /API/CHALLENGE</text>
+      <text x="10" y="38" class="s">Verify ECDSA · counter monotonic</text>
+      <text x="10" y="52" class="s">Rate-limit by card_id + IP</text>
+      <text x="10" y="68" class="s gold">STRIDE: Repudiation → audit log</text>
+    </g>
+    <g transform="translate(14 162)">
+      <rect width="292" height="76" rx="4" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.5)"/>
+      <text x="10" y="20" class="h">SUPABASE / RLS</text>
+      <text x="10" y="38" class="s">Row-level security · service role isolated</text>
+      <text x="10" y="52" class="s">Tenant scoped per owner_id</text>
+      <text x="10" y="68" class="s gold">STRIDE: Information Disclosure</text>
+    </g>
+    <g transform="translate(14 254)">
+      <rect width="292" height="98" rx="4" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.5)"/>
+      <text x="10" y="20" class="h">DASHBOARD · OWNER</text>
+      <text x="10" y="38" class="s">JOSE-signed sessions · WebAuthn</text>
+      <text x="10" y="52" class="s">Hard-disable card per row</text>
+      <text x="10" y="66" class="s">/api/admin/break-glass · 2-of-2</text>
+      <text x="10" y="84" class="s gold">STRIDE: EoP · DoS</text>
+    </g>
+  </g>
+
+  <!-- Boundary arrows -->
+  <g>
+    <path class="arr" d="M340 220 L380 220" marker-end="url(#arr1)"/>
+    <text x="346" y="212" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#00e5c8">RF · NFC</text>
+    <path class="arr" d="M700 220 L740 220" marker-end="url(#arr1)"/>
+    <text x="708" y="212" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#c9a84c">HTTPS · mTLS</text>
+  </g>
+
+  <text x="60" y="514" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="3" fill="#6b6b72">DOTTED BOUNDARY = TRUST EDGE · EVERY EDGE HAS A POLICY · DEFAULT-DENY · LOG-EVERYTHING</text>
+</svg>

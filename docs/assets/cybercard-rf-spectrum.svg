@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" role="img" aria-label="CyberCard RF spectrum chart">
+  <title>CyberCard — RF Spectrum Coverage</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0c"/><stop offset="1" stop-color="#111114"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(0,229,200,0.05)" stroke-width="0.5"/></pattern>
+    <linearGradient id="bandRX" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(0,229,200,0.6)"/><stop offset="1" stop-color="rgba(0,229,200,0)"/>
+    </linearGradient>
+    <linearGradient id="bandTX" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(201,168,76,0.7)"/><stop offset="1" stop-color="rgba(201,168,76,0)"/>
+    </linearGradient>
+  </defs>
+  <rect width="1100" height="540" fill="url(#bg)"/>
+  <rect width="1100" height="540" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="3" fill="#6b6b72">
+    <text x="40" y="38">PERSONFU // FLLC.NET</text>
+    <text x="1060" y="38" text-anchor="end">CYBERCARD / RF_SPECTRUM_v1</text>
+  </g>
+  <text x="40" y="76" font-family="ui-monospace, Consolas, monospace" font-size="20" letter-spacing="6" fill="#f5f5f7">RF SPECTRUM COVERAGE — 100 KHZ → 5 GHZ (LOG SCALE)</text>
+  <text x="40" y="98" font-family="ui-monospace, Consolas, monospace" font-size="11" letter-spacing="3" fill="#00e5c8" opacity="0.8">CYBERCARD + CYBERFLIPPER UNIFIED RADIO SURFACE · GREEN = RX/AWARENESS · GOLD = LICENSED TX</text>
+
+  <!-- Axis -->
+  <g transform="translate(80 380)" stroke="#3a3b40" fill="none">
+    <line x1="0" y1="0" x2="980" y2="0" stroke="rgba(255,255,255,0.25)"/>
+    <g font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#9da0a8">
+      <g><line x1="0" y1="0" x2="0" y2="6" stroke="rgba(255,255,255,0.4)"/><text x="0" y="22" text-anchor="middle">100 kHz</text></g>
+      <g><line x1="140" y1="0" x2="140" y2="6" stroke="rgba(255,255,255,0.4)"/><text x="140" y="22" text-anchor="middle">1 MHz</text></g>
+      <g><line x1="280" y1="0" x2="280" y2="6" stroke="rgba(255,255,255,0.4)"/><text x="280" y="22" text-anchor="middle">10 MHz</text></g>
+      <g><line x1="420" y1="0" x2="420" y2="6" stroke="rgba(255,255,255,0.4)"/><text x="420" y="22" text-anchor="middle">100 MHz</text></g>
+      <g><line x1="560" y1="0" x2="560" y2="6" stroke="rgba(255,255,255,0.4)"/><text x="560" y="22" text-anchor="middle">1 GHz</text></g>
+      <g><line x1="700" y1="0" x2="700" y2="6" stroke="rgba(255,255,255,0.4)"/><text x="700" y="22" text-anchor="middle">5 GHz</text></g>
+      <text x="490" y="50" text-anchor="middle" letter-spacing="3" fill="#6b6b72">FREQUENCY (LOG)</text>
+    </g>
+  </g>
+
+  <!-- Y axis dB -->
+  <g transform="translate(80 140)" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#9da0a8">
+    <line x1="0" y1="0" x2="0" y2="240" stroke="rgba(255,255,255,0.25)"/>
+    <text x="-8" y="4" text-anchor="end">0 dBm</text><line x1="0" y1="0" x2="980" y2="0" stroke="rgba(255,255,255,0.06)"/>
+    <text x="-8" y="64" text-anchor="end">-10</text><line x1="0" y1="60" x2="980" y2="60" stroke="rgba(255,255,255,0.06)"/>
+    <text x="-8" y="124" text-anchor="end">-20</text><line x1="0" y1="120" x2="980" y2="120" stroke="rgba(255,255,255,0.06)"/>
+    <text x="-8" y="184" text-anchor="end">-30</text><line x1="0" y1="180" x2="980" y2="180" stroke="rgba(255,255,255,0.06)"/>
+    <text x="-8" y="244" text-anchor="end">-40</text>
+  </g>
+
+  <!-- Bands. log10(f/100kHz)*~70 = x. 100k=0, 125k=21, 13.56M=343 -->
+  <!-- 125 kHz LF (RFID) at log(1.25)=0.097 -> 0.097/4*980 = 24 -->
+  <g transform="translate(80 140)">
+    <!-- 125 kHz -->
+    <rect x="22" y="80" width="6" height="160" fill="url(#bandRX)"/>
+    <text x="25" y="72" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#00e5c8" text-anchor="middle">125 kHz</text>
+    <text x="25" y="60" font-family="ui-monospace, Consolas, monospace" font-size="7" letter-spacing="1" fill="#6b6b72" text-anchor="middle">EM4100 / HID</text>
+
+    <!-- 13.56 MHz -->
+    <rect x="338" y="20" width="10" height="220" fill="url(#bandRX)"/>
+    <text x="343" y="12" font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="2" fill="#00e5c8" text-anchor="middle">13.56 MHz</text>
+    <text x="343" y="-2" font-family="ui-monospace, Consolas, monospace" font-size="7" letter-spacing="1" fill="#6b6b72" text-anchor="middle">NFC / ISO14443</text>
+
+    <!-- 315 / 433 / 868 / 915 -->
+    <rect x="500" y="100" width="6" height="140" fill="url(#bandRX)"/>
+    <text x="503" y="92" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#00e5c8" text-anchor="middle">315</text>
+
+    <rect x="528" y="60" width="8" height="180" fill="url(#bandTX)"/>
+    <text x="532" y="52" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#c9a84c" text-anchor="middle">433.92</text>
+    <text x="532" y="40" font-family="ui-monospace, Consolas, monospace" font-size="7" letter-spacing="1" fill="#6b6b72" text-anchor="middle">ISM / Lic</text>
+
+    <rect x="552" y="80" width="6" height="160" fill="url(#bandRX)"/>
+    <text x="555" y="72" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#00e5c8" text-anchor="middle">868</text>
+
+    <rect x="572" y="80" width="6" height="160" fill="url(#bandRX)"/>
+    <text x="575" y="72" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#00e5c8" text-anchor="middle">915</text>
+
+    <!-- 2.4 GHz -->
+    <rect x="660" y="40" width="20" height="200" fill="url(#bandTX)"/>
+    <text x="670" y="32" font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="2" fill="#c9a84c" text-anchor="middle">2.4 GHz</text>
+    <text x="670" y="20" font-family="ui-monospace, Consolas, monospace" font-size="7" letter-spacing="1" fill="#6b6b72" text-anchor="middle">Wi-Fi / BLE</text>
+
+    <!-- 5 GHz Wi-Fi -->
+    <rect x="700" y="100" width="14" height="140" fill="url(#bandTX)"/>
+    <text x="707" y="92" font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="2" fill="#c9a84c" text-anchor="middle">5 GHz</text>
+
+    <!-- IR symbolic -->
+    <rect x="430" y="120" width="6" height="120" fill="rgba(255,255,255,0.12)"/>
+    <text x="433" y="112" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#9da0a8" text-anchor="middle">38 kHz IR</text>
+    <text x="433" y="100" font-family="ui-monospace, Consolas, monospace" font-size="7" letter-spacing="1" fill="#6b6b72" text-anchor="middle">consumer</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(80 470)" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="3" fill="#9da0a8">
+    <rect x="0" y="-10" width="14" height="14" fill="url(#bandRX)"/><text x="22" y="2" fill="#00e5c8">RX / AWARENESS</text>
+    <rect x="180" y="-10" width="14" height="14" fill="url(#bandTX)"/><text x="202" y="2" fill="#c9a84c">LICENSED TX (OPERATOR-GATED)</text>
+    <text x="500" y="2">FRIIS · PR=PT·GT·GR·(λ/4πd)² · &amp; SHANNON · C = B·log₂(1+SNR)</text>
+  </g>
+</svg>

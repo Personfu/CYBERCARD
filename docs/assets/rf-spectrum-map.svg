@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-label="RF spectrum map">
+  <defs><style>text{font-family:Consolas,monospace;fill:#e8e4dc}.title{font-size:34px;font-weight:800}.s{font-size:18px;fill:#a9b4bf}.axis{stroke:#6b7682;stroke-width:2}.tick{stroke:#00e5c8;stroke-width:2}.band{fill:#101820;stroke:#00e5c8;stroke-width:2}.gold{stroke:#c9a84c}.lab{font-size:17px;fill:#c9a84c}</style></defs>
+  <rect width="1280" height="520" fill="#06070a"/>
+  <text x="54" y="64" class="title">CYBERCARD RF / OPTICAL / WIRED DOMAIN MAP</text>
+  <text x="56" y="96" class="s">Frequency, wavelength, interface, lab use, and trust boundary. Transmission only where authorized and compliant.</text>
+  <line x1="90" y1="310" x2="1190" y2="310" class="axis"/>
+  <g>
+    <rect x="125" y="190" width="135" height="95" rx="8" class="band"/><text x="145" y="225" class="lab">125 kHz LF</text><text x="145" y="253" class="s">RFID/iButton</text><text x="145" y="277" class="s">lambda ~2.4 km</text>
+    <rect x="300" y="160" width="155" height="125" rx="8" class="band"/><text x="320" y="197" class="lab">13.56 MHz</text><text x="320" y="225" class="s">NFC/NTAG</text><text x="320" y="249" class="s">lambda ~22.1 m</text>
+    <rect x="505" y="190" width="170" height="95" rx="8" class="band gold"/><text x="525" y="225" class="lab">300-928 MHz</text><text x="525" y="253" class="s">CC1101 lab</text><text x="525" y="277" class="s">1.0-0.32 m</text>
+    <rect x="725" y="160" width="170" height="125" rx="8" class="band gold"/><text x="745" y="197" class="lab">136-174 / 400-520</text><text x="745" y="225" class="s">UV-K5 receive</text><text x="745" y="249" class="s">VHF/UHF</text>
+    <rect x="945" y="190" width="160" height="95" rx="8" class="band"/><text x="965" y="225" class="lab">2.4 GHz</text><text x="965" y="253" class="s">Wi-Fi/BLE</text><text x="965" y="277" class="s">lambda ~12.5 cm</text>
+  </g>
+  <text x="110" y="385" class="s">Formula: lambda = c / f, where c = 299,792,458 m/s. Near field boundary approx r &lt; lambda / (2*pi).</text>
+  <text x="110" y="420" class="s">NFC is near-field magnetic coupling; sub-GHz and Wi-Fi are far-field RF; IR is optical line-of-sight; USB/iButton are wired interfaces.</text>
+</svg>

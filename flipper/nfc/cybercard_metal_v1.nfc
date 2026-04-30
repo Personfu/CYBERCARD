@@ -1,0 +1,10 @@
+Filetype: Flipper NFC device
+Version: 4
+# CyberCard metal_v1 public URL-only NFC demo
+# Program your own NTAG216 with scripts/generate_ndef.js for production.
+Device type: NTAG216
+UID: 04 00 00 00 00 00 00
+ATQA: 00 44
+SAK: 00
+Data format version: 2
+# Payload target: https://fllc.net/tap?card_id=metal_v1&utm_source=flipper_nfc&utm_medium=demo

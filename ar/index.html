@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>CyberCard AR — Furulie LLC</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #06070a; color: #e8e4dc; font-family: monospace; overflow: hidden; }
+
+    #overlay {
+      position: fixed; inset: 0; z-index: 10;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-end;
+      padding: 2rem; pointer-events: none;
+      background: linear-gradient(to top, rgba(6,7,10,0.7) 0%, transparent 60%);
+    }
+    #status {
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: #00e5c8; opacity: 0.7; margin-bottom: 0.5rem;
+    }
+    #cta {
+      font-size: 13px; letter-spacing: 2px; color: #c9a84c;
+      border: 1px solid rgba(201,168,76,0.4); border-radius: 4px;
+      padding: 10px 20px; pointer-events: all; cursor: pointer;
+      text-decoration: none; background: rgba(201,168,76,0.05);
+      transition: background 0.2s;
+    }
+    #cta:hover { background: rgba(201,168,76,0.12); }
+    #scan-hint {
+      position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%);
+      font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(0,229,200,0.5); z-index: 10; pointer-events: none;
+    }
+    #corner-tl, #corner-tr, #corner-bl, #corner-br {
+      position: fixed; width: 24px; height: 24px;
+      border-color: rgba(0,229,200,0.4); border-style: solid; z-index: 10;
+      pointer-events: none;
+    }
+    #corner-tl { top: 1rem; left: 1rem;  border-width: 2px 0 0 2px; }
+    #corner-tr { top: 1rem; right: 1rem; border-width: 2px 2px 0 0; }
+    #corner-bl { bottom: 1rem; left: 1rem;  border-width: 0 0 2px 2px; }
+    #corner-br { bottom: 1rem; right: 1rem; border-width: 0 2px 2px 0; }
+  </style>
+
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ar.js@3.4.5/aframe/build/aframe-ar.min.js"></script>
+</head>
+<body>
+
+<!-- HUD overlays -->
+<div id="corner-tl"></div>
+<div id="corner-tr"></div>
+<div id="corner-bl"></div>
+<div id="corner-br"></div>
+<p id="scan-hint">aim at the hiro marker · hold steady</p>
+<div id="overlay">
+  <p id="status">AR layer · ready</p>
+  <a id="cta" href="/tap?card_id=ar_v1&utm_source=ar&utm_medium=marker" target="_top">
+    ⟶ tap profile
+  </a>
+</div>
+
+<a-scene
+  embedded
+  arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+  renderer="logarithmicDepthBuffer: true; antialias: true;"
+  vr-mode-ui="enabled: false"
+  loading-screen="dotsColor: #00e5c8; backgroundColor: #06070a"
+>
+
+  <!-- Hiro marker (prototype) — swap hiro→custom NFT marker for production -->
+  <!-- To generate a custom marker: https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html -->
+  <a-marker preset="hiro" id="cyber-marker" smooth="true" smoothCount="5" smoothTolerance="0.01">
+
+    <!-- Floating name card -->
+    <a-entity position="0 0.5 0">
+
+      <!-- Background plane -->
+      <a-plane
+        width="3" height="1.4"
+        color="#06070a"
+        opacity="0.92"
+        position="0 0 0"
+        rotation="-90 0 0"
+      ></a-plane>
+
+      <!-- Neon border frame — four edge strips -->
+      <a-plane width="3.04" height="0.03" color="#00e5c8" opacity="0.6"
+        position="0  0.7  0.001" rotation="-90 0 0"></a-plane>
+      <a-plane width="3.04" height="0.03" color="#00e5c8" opacity="0.6"
+        position="0 -0.7  0.001" rotation="-90 0 0"></a-plane>
+      <a-plane width="0.03" height="1.44" color="#00e5c8" opacity="0.6"
+        position="-1.52 0  0.001" rotation="-90 0 0"></a-plane>
+      <a-plane width="0.03" height="1.44" color="#00e5c8" opacity="0.6"
+        position="1.52  0  0.001" rotation="-90 0 0"></a-plane>
+
+      <!-- Name text -->
+      <a-text
+        value="PRESTON FURULIE"
+        color="#ffffff"
+        width="2.6"
+        align="center"
+        font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"
+        position="0 0.22 0.01"
+        rotation="-90 0 0"
+        letter-spacing="4"
+      ></a-text>
+
+      <!-- Title text -->
+      <a-text
+        value="FURULIE LLC · CYBERSECURITY & AEROSPACE"
+        color="#00e5c8"
+        width="2.8"
+        align="center"
+        font="https://cdn.aframe.io/fonts/mozillavr.fnt"
+        position="0 0.02 0.01"
+        rotation="-90 0 0"
+        letter-spacing="2"
+      ></a-text>
+
+      <!-- Gold accent line -->
+      <a-plane width="1.2" height="0.015" color="#c9a84c" opacity="0.8"
+        position="0 -0.14 0.01" rotation="-90 0 0"></a-plane>
+
+      <!-- Tagline -->
+      <a-text
+        value="TAP CARD OR SCAN QR FOR FULL PROFILE"
+        color="#c9a84c"
+        width="2.6"
+        align="center"
+        font="https://cdn.aframe.io/fonts/mozillavr.fnt"
+        position="0 -0.32 0.01"
+        rotation="-90 0 0"
+        letter-spacing="1"
+      ></a-text>
+
+    </a-entity>
+
+    <!-- Floating ESP32 / chip icon — 3D box above card -->
+    <a-box
+      position="0 1.6 0"
+      width="0.3" height="0.08" depth="0.3"
+      color="#1a1a2e"
+      rotation="0 0 0"
+      animation="property: rotation; to: 0 360 0; dur: 8000; easing: linear; loop: true"
+    >
+      <!-- Chip text label -->
+      <a-text
+        value="ESP32-S3"
+        color="#00e5c8"
+        width="1.2"
+        align="center"
+        position="0 0.06 0.16"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+      ></a-text>
+    </a-box>
+
+    <!-- Pulsing neon ring at base -->
+    <a-torus
+      position="0 0.01 0"
+      radius="1.6" radius-tubular="0.01"
+      color="#00e5c8"
+      opacity="0.35"
+      rotation="-90 0 0"
+      animation="property: opacity; from: 0.1; to: 0.5; dur: 1800; dir: alternate; easing: easeInOutSine; loop: true"
+    ></a-torus>
+
+  </a-marker>
+
+  <!-- Camera -->
+  <a-entity camera></a-entity>
+
+</a-scene>
+
+<script>
+  // Update HUD when marker is found/lost
+  const marker = document.getElementById('cyber-marker')
+  const status = document.getElementById('status')
+  const hint   = document.getElementById('scan-hint')
+
+  marker.addEventListener('markerFound', () => {
+    status.textContent = '● marker locked'
+    status.style.color = '#00e5c8'
+    hint.style.opacity = '0'
+  })
+
+  marker.addEventListener('markerLost', () => {
+    status.textContent = 'AR layer · ready'
+    status.style.color = 'rgba(0,229,200,0.7)'
+    hint.style.opacity = '1'
+  })
+
+  // Redirect CTA with tap tracking
+  document.getElementById('cta').addEventListener('click', (e) => {
+    e.preventDefault()
+    const url = '/tap?card_id=ar_v1&utm_source=ar&utm_medium=marker'
+    window.top.location.href = url
+  })
+</script>
+
+</body>
+</html>

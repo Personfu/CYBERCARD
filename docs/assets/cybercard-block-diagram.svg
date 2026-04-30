@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" role="img" aria-label="CyberCard system block diagram">
+  <title>CyberCard — System Block Diagram</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0c"/><stop offset="1" stop-color="#111114"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="rgba(0,229,200,0.05)" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#00e5c8"/>
+    </marker>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#c9a84c"/>
+    </marker>
+  </defs>
+  <style>
+    .block { fill: rgba(255,255,255,0.025); stroke: rgba(0,229,200,0.5); }
+    .block-gold { fill: rgba(201,168,76,0.06); stroke: rgba(201,168,76,0.55); }
+    .block-rf   { fill: rgba(0,229,200,0.08); stroke: rgba(0,229,200,0.65); }
+    .label-h { font: 700 12px ui-monospace, Consolas, monospace; letter-spacing: 3px; fill: #f5f5f7; }
+    .label-s { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #9da0a8; }
+    .label-tag { font: 8px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #00e5c8; }
+    .pin { font: 8px ui-monospace, Consolas, monospace; fill: #c9a84c; }
+    .bus { stroke: #00e5c8; stroke-width: 1.4; fill: none; }
+    .bus-gold { stroke: #c9a84c; stroke-width: 1.4; fill: none; }
+    .bus-mute { stroke: rgba(255,255,255,0.25); stroke-width: 1; fill: none; stroke-dasharray: 3 3; }
+  </style>
+
+  <rect width="1100" height="620" fill="url(#bg)"/>
+  <rect width="1100" height="620" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="3" fill="#6b6b72">
+    <text x="40" y="38">PERSONFU // FLLC.NET</text>
+    <text x="1060" y="38" text-anchor="end">CYBERCARD / SYSTEM_BLOCK_v1</text>
+  </g>
+  <text x="40" y="76" class="label-h" font-size="20">SYSTEM BLOCK · CYBERCARD WALLET DEVICE</text>
+  <text x="40" y="98" class="label-s" fill="#00e5c8">ESP32-S3 · PN5180 · CC1101 · NTAG216 · BQ25180 · IMU · DISPLAY · BLE5</text>
+
+  <!-- MCU -->
+  <g transform="translate(440 240)">
+    <rect width="220" height="140" rx="6" class="block"/>
+    <text x="14" y="22" class="label-h">ESP32-S3-WROOM-1U</text>
+    <text x="14" y="38" class="label-s">240 MHz · 8 MB PSRAM · 16 MB FLASH</text>
+    <text x="14" y="54" class="label-s">Wi-Fi 4 · BLE 5.0 · USB-OTG</text>
+    <line x1="0" y1="68" x2="220" y2="68" stroke="rgba(0,229,200,0.25)"/>
+    <g class="pin">
+      <text x="14" y="86">GPIO11 SDA · GPIO12 SCL</text>
+      <text x="14" y="100">GPIO35 SCK · 36 MOSI · 37 MISO</text>
+      <text x="14" y="114">GPIO38 CS_PN5180 · 39 BUSY</text>
+      <text x="14" y="128">GPIO40 CS_CC1101 · 41 GDO0</text>
+    </g>
+  </g>
+
+  <!-- NFC -->
+  <g transform="translate(120 130)">
+    <rect width="200" height="100" rx="6" class="block-rf"/>
+    <text x="14" y="22" class="label-h">PN5180</text>
+    <text x="14" y="38" class="label-s">13.56 MHz · ISO14443 A/B · 15693</text>
+    <text x="14" y="54" class="label-s">FELICA · NFC-V · HCE</text>
+    <text x="14" y="74" class="label-tag">[A] NFC TX/RX · 4-TURN COIL</text>
+  </g>
+
+  <!-- NTAG -->
+  <g transform="translate(120 270)">
+    <rect width="200" height="80" rx="6" class="block-gold"/>
+    <text x="14" y="22" class="label-h">NTAG216</text>
+    <text x="14" y="38" class="label-s">924 BYTES · NDEF URL · COUNTER</text>
+    <text x="14" y="58" class="label-tag" fill="#c9a84c">[B] PASSIVE TAP · NO POWER</text>
+  </g>
+
+  <!-- CC1101 -->
+  <g transform="translate(120 400)">
+    <rect width="200" height="100" rx="6" class="block-rf"/>
+    <text x="14" y="22" class="label-h">CC1101</text>
+    <text x="14" y="38" class="label-s">315 / 433.92 / 868 / 915 MHz</text>
+    <text x="14" y="54" class="label-s">RX-ONLY UNLESS LICENSED</text>
+    <text x="14" y="74" class="label-tag">[C] SUB-GHZ AUDIT</text>
+  </g>
+
+  <!-- Display -->
+  <g transform="translate(780 130)">
+    <rect width="200" height="100" rx="6" class="block"/>
+    <text x="14" y="22" class="label-h">SH1107 OLED</text>
+    <text x="14" y="38" class="label-s">128×128 · I²C · 1.5"</text>
+    <text x="14" y="58" class="label-tag">[D] STATUS · QR · TAP COUNT</text>
+  </g>
+
+  <!-- IMU -->
+  <g transform="translate(780 270)">
+    <rect width="200" height="80" rx="6" class="block"/>
+    <text x="14" y="22" class="label-h">LSM6DSOX IMU</text>
+    <text x="14" y="38" class="label-s">6DOF · TAMPER · TAP-DETECT</text>
+    <text x="14" y="58" class="label-tag">[E] TILT/MOTION TRIGGER</text>
+  </g>
+
+  <!-- PMIC -->
+  <g transform="translate(780 400)">
+    <rect width="200" height="100" rx="6" class="block-gold"/>
+    <text x="14" y="22" class="label-h">BQ25180 + TPS62840</text>
+    <text x="14" y="38" class="label-s">Li-Po 150 mAh · USB-C · BUCK 1V8</text>
+    <text x="14" y="54" class="label-s">SLEEP 4 µA · ACTIVE 60 mA</text>
+    <text x="14" y="74" class="label-tag" fill="#c9a84c">[F] POWER · CHARGE · GAUGE</text>
+  </g>
+
+  <!-- Storage -->
+  <g transform="translate(440 110)">
+    <rect width="220" height="80" rx="6" class="block"/>
+    <text x="14" y="22" class="label-h">SECURE ELEMENT</text>
+    <text x="14" y="38" class="label-s">ATECC608B · ECC P-256 · I²C</text>
+    <text x="14" y="58" class="label-tag">[G] EPHEMERAL CHALLENGE KEYS</text>
+  </g>
+
+  <!-- Cloud -->
+  <g transform="translate(440 430)">
+    <rect width="220" height="120" rx="6" class="block"/>
+    <text x="14" y="22" class="label-h">FLLC.NET (NEXT.JS)</text>
+    <text x="14" y="38" class="label-s">/api/tap · /api/challenge · /api/risk</text>
+    <text x="14" y="54" class="label-s">SUPABASE · STRIPE · RESEND</text>
+    <text x="14" y="70" class="label-s">RLS · AUDIT LOG · OWASP-ALIGN</text>
+    <text x="14" y="92" class="label-tag">[H] CONSENT-FIRST CONTROL PLANE</text>
+  </g>
+
+  <!-- Buses -->
+  <g>
+    <path class="bus" d="M320 180 L440 180" marker-end="url(#arrow)"/>
+    <text x="370" y="172" class="label-tag">SPI 8 MHZ</text>
+
+    <path class="bus-gold" d="M320 310 C 380 310 380 270 440 270" marker-end="url(#arrowGold)"/>
+    <text x="356" y="262" class="pin">PASSIVE</text>
+
+    <path class="bus" d="M320 450 L440 450" marker-end="url(#arrow)"/>
+    <text x="362" y="442" class="label-tag">SPI 5 MHZ</text>
+
+    <path class="bus" d="M660 180 L780 180" marker-end="url(#arrow)"/>
+    <text x="694" y="172" class="label-tag">I²C 400 KHZ</text>
+
+    <path class="bus" d="M660 310 L780 310" marker-end="url(#arrow)"/>
+    <text x="688" y="302" class="label-tag">I²C 1 MHZ</text>
+
+    <path class="bus-gold" d="M660 450 L780 450" marker-end="url(#arrowGold)"/>
+    <text x="694" y="442" class="pin">VBUS / VBAT</text>
+
+    <path class="bus" d="M550 240 L550 190" marker-end="url(#arrow)"/>
+    <text x="558" y="218" class="label-tag">I²C SE</text>
+
+    <path class="bus" d="M550 380 L550 430" marker-end="url(#arrow)"/>
+    <text x="558" y="408" class="label-tag">HTTPS · WSS</text>
+  </g>
+
+  <!-- Footer notes -->
+  <g transform="translate(40 568)" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#9da0a8">
+    <text>BUS LEGEND:</text>
+    <line x1="120" y1="-4" x2="160" y2="-4" class="bus"/><text x="166" y="-1" fill="#00e5c8">DIGITAL</text>
+    <line x1="240" y1="-4" x2="280" y2="-4" class="bus-gold"/><text x="286" y="-1" fill="#c9a84c">POWER / PASSIVE</text>
+    <line x1="420" y1="-4" x2="460" y2="-4" class="bus-mute"/><text x="466" y="-1">RF / OTA</text>
+    <text x="0" y="22">SAFETY: SUB-GHZ TX REQUIRES LICENSED OPERATOR · CC1101 SHIPS RX-ONLY · NO CRED CAPTURE · NO AUTO-EXEC</text>
+  </g>
+</svg>

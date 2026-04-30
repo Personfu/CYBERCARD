@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 856 540" role="img" aria-label="CyberCard back schematic with NFC coil and QR">
+  <title>CyberCard — Back Schematic</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0c"/><stop offset="1" stop-color="#111114"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1d22"/><stop offset="0.5" stop-color="#2a2b31"/><stop offset="1" stop-color="#0e0f12"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="rgba(0,229,200,0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="856" height="540" fill="url(#bg)"/>
+  <rect width="856" height="540" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="3" fill="#6b6b72">
+    <text x="40" y="38">PERSONFU // FLLC.NET</text>
+    <text x="816" y="38" text-anchor="end">CYBERCARD / CONCEPT_BACK_v1</text>
+    <text x="40" y="514">ANTENNA — 4-TURN RECT SPIRAL · L≈2.4 µH · C_TUN≈58 pF · f0=13.56 MHz</text>
+    <text x="816" y="514" text-anchor="end" fill="#c9a84c" opacity="0.7">QR · vCard fallback</text>
+  </g>
+
+  <g transform="translate(108 110)">
+    <rect width="640" height="320" rx="20" fill="url(#metal)" stroke="rgba(0,229,200,0.55)" stroke-width="1.2"/>
+
+    <!-- Frame box for coil -->
+    <g transform="translate(40 40)">
+      <rect width="320" height="240" fill="none" stroke="rgba(0,229,200,0.15)" stroke-dasharray="4 4"/>
+      <text x="0" y="-8" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="3" fill="#00e5c8" opacity="0.85">A · NFC ANTENNA AREA</text>
+
+      <!-- Spiral coil -->
+      <g fill="none" stroke="#00e5c8" stroke-width="1.4">
+        <rect x="20" y="20" width="280" height="200" rx="10"/>
+        <rect x="34" y="34" width="252" height="172" rx="9"/>
+        <rect x="48" y="48" width="224" height="144" rx="8"/>
+        <rect x="62" y="62" width="196" height="116" rx="7"/>
+      </g>
+      <!-- Connection bridges -->
+      <g stroke="#c9a84c" stroke-width="1.4" fill="none">
+        <path d="M62 178 L62 220"/>
+        <path d="M258 178 L258 220 L20 220"/>
+      </g>
+      <!-- Pads -->
+      <g fill="#c9a84c">
+        <rect x="56" y="216" width="12" height="12" rx="2"/>
+        <rect x="14" y="216" width="12" height="12" rx="2"/>
+      </g>
+      <g font-family="ui-monospace, Consolas, monospace" font-size="8" letter-spacing="2" fill="#c9a84c">
+        <text x="74" y="234">PAD_LA</text>
+        <text x="32" y="246">PAD_LB</text>
+      </g>
+
+      <!-- Field bursts -->
+      <g stroke="rgba(0,229,200,0.35)" fill="none">
+        <circle cx="160" cy="120" r="58"/>
+        <circle cx="160" cy="120" r="78" stroke-dasharray="2 3"/>
+        <circle cx="160" cy="120" r="98" stroke-dasharray="1 4"/>
+      </g>
+      <g font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="3" fill="#00e5c8">
+        <text x="160" y="124" text-anchor="middle">B-FIELD</text>
+        <text x="160" y="138" text-anchor="middle" font-size="7" letter-spacing="2" opacity="0.7">∝ 1/r³ NEAR-FIELD</text>
+      </g>
+    </g>
+
+    <!-- QR block -->
+    <g transform="translate(420 60)">
+      <rect width="180" height="180" fill="#0a0a0c" stroke="rgba(0,229,200,0.4)"/>
+      <!-- finder patterns -->
+      <g fill="#f5f5f7">
+        <rect x="12" y="12" width="34" height="34"/>
+        <rect x="134" y="12" width="34" height="34"/>
+        <rect x="12" y="134" width="34" height="34"/>
+      </g>
+      <g fill="#0a0a0c">
+        <rect x="18" y="18" width="22" height="22"/>
+        <rect x="140" y="18" width="22" height="22"/>
+        <rect x="18" y="140" width="22" height="22"/>
+      </g>
+      <g fill="#f5f5f7">
+        <rect x="24" y="24" width="10" height="10"/>
+        <rect x="146" y="24" width="10" height="10"/>
+        <rect x="24" y="146" width="10" height="10"/>
+      </g>
+      <!-- noise modules -->
+      <g fill="#f5f5f7">
+        <rect x="56" y="14" width="6" height="6"/><rect x="68" y="14" width="6" height="6"/>
+        <rect x="80" y="20" width="6" height="6"/><rect x="92" y="14" width="6" height="6"/>
+        <rect x="104" y="26" width="6" height="6"/><rect x="116" y="14" width="6" height="6"/>
+        <rect x="56" y="32" width="6" height="6"/><rect x="80" y="38" width="6" height="6"/>
+        <rect x="116" y="38" width="6" height="6"/>
+        <rect x="14" y="56" width="6" height="6"/><rect x="32" y="56" width="6" height="6"/>
+        <rect x="56" y="56" width="12" height="6"/><rect x="80" y="62" width="6" height="6"/>
+        <rect x="104" y="56" width="6" height="6"/><rect x="146" y="56" width="6" height="6"/>
+        <rect x="160" y="62" width="6" height="6"/><rect x="20" y="74" width="6" height="6"/>
+        <rect x="44" y="74" width="6" height="6"/><rect x="62" y="80" width="6" height="6"/>
+        <rect x="80" y="74" width="12" height="6"/><rect x="104" y="80" width="6" height="6"/>
+        <rect x="128" y="74" width="6" height="6"/><rect x="146" y="80" width="6" height="6"/>
+        <rect x="14" y="92" width="6" height="6"/><rect x="38" y="92" width="6" height="6"/>
+        <rect x="56" y="98" width="6" height="6"/><rect x="74" y="92" width="6" height="6"/>
+        <rect x="92" y="104" width="6" height="6"/><rect x="116" y="92" width="6" height="6"/>
+        <rect x="134" y="104" width="6" height="6"/><rect x="158" y="92" width="6" height="6"/>
+        <rect x="22" y="116" width="6" height="6"/><rect x="44" y="122" width="6" height="6"/>
+        <rect x="62" y="116" width="6" height="6"/><rect x="86" y="122" width="6" height="6"/>
+        <rect x="104" y="116" width="6" height="6"/><rect x="122" y="122" width="6" height="6"/>
+        <rect x="146" y="116" width="6" height="6"/><rect x="56" y="146" width="6" height="6"/>
+        <rect x="74" y="158" width="6" height="6"/><rect x="92" y="146" width="6" height="6"/>
+        <rect x="110" y="158" width="6" height="6"/><rect x="128" y="146" width="6" height="6"/>
+        <rect x="146" y="158" width="6" height="6"/><rect x="160" y="146" width="6" height="6"/>
+      </g>
+      <text x="0" y="-8" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="3" fill="#00e5c8" opacity="0.85">B · QR FALLBACK · ECC-Q</text>
+    </g>
+
+    <!-- Footer -->
+    <g font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="3" fill="#6b6b72">
+      <text x="32" y="304">FLLC.NET/TAP?CARD_ID=0xPF-01-A7F3</text>
+      <text x="608" y="304" text-anchor="end" fill="#c9a84c">FOR QR & TAP · CONSENT-FIRST</text>
+    </g>
+  </g>
+
+  <!-- Right callouts -->
+  <g font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#9da0a8">
+    <line x1="148" y1="350" x2="148" y2="380" stroke="rgba(0,229,200,0.4)"/>
+    <text x="60" y="402" fill="#00e5c8">A — 4-TURN SPIRAL Ø60µm Cu, 0.2mm pitch</text>
+    <line x1="510" y1="350" x2="510" y2="380" stroke="rgba(201,168,76,0.4)"/>
+    <text x="430" y="402" fill="#c9a84c">B — QR fallback prints in same gold ink</text>
+  </g>
+</svg>

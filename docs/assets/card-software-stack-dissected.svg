@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" font-family="JetBrains Mono, ui-monospace, monospace">
+  <defs>
+    <radialGradient id="vig" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#0c0d11"/><stop offset="100%" stop-color="#06070a"/></radialGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#vig)"/>
+
+  <text x="60" y="50" fill="#00e5c8" font-size="11" letter-spacing="6">// CYBERCARD // SOFTWARE STACK · DISSECTED LIKE THE CARD</text>
+  <text x="60" y="70" fill="#a9b4bf" font-size="10" letter-spacing="2">EACH SOFTWARE LAYER MIRRORS A PHYSICAL LAYER · CONSENT-FIRST · AUDIT-AUTHORITATIVE</text>
+
+  <!-- card -->
+  <g transform="translate(80 110)">
+    <!-- card outline (matched to laser-front) -->
+    <rect x="0" y="0" width="540" height="640" rx="22" fill="#0a0c10" stroke="#3a3e48" stroke-width="1.4"/>
+
+    <!-- L1 PRESENTATION (browser) -->
+    <g transform="translate(20 30)">
+      <rect width="500" height="80" fill="none" stroke="#e8e4dc" stroke-width="1"/>
+      <text x="14" y="22" fill="#c9a84c" font-size="9" letter-spacing="3">L1 · PRESENTATION</text>
+      <text x="14" y="42" fill="#e8e4dc" font-size="11">Next.js 14 App Router · React 18 · Tailwind</text>
+      <text x="14" y="58" fill="#a9b4bf" font-size="9">/ · /tap · /risk · /challenge · /dashboard · /loader</text>
+      <text x="14" y="72" fill="#a9b4bf" font-size="9">AgencyLoader splash · SplashGate guard · A-Frame AR</text>
+    </g>
+
+    <!-- L2 EDGE/API -->
+    <g transform="translate(20 120)">
+      <rect width="500" height="80" fill="none" stroke="#e8e4dc" stroke-width="1"/>
+      <text x="14" y="22" fill="#c9a84c" font-size="9" letter-spacing="3">L2 · EDGE / API</text>
+      <text x="14" y="42" fill="#e8e4dc" font-size="11">Next API routes · service-role isolated</text>
+      <text x="14" y="58" fill="#a9b4bf" font-size="9">/api/tap · /api/vcard · /api/challenge · /api/gov</text>
+      <text x="14" y="72" fill="#a9b4bf" font-size="9">/api/stripe · /api/risk · /api/device/telemetry · /api/admin/break-glass</text>
+    </g>
+
+    <!-- L3 IDENTITY -->
+    <g transform="translate(20 210)">
+      <rect width="500" height="80" fill="none" stroke="#e8e4dc" stroke-width="1"/>
+      <text x="14" y="22" fill="#c9a84c" font-size="9" letter-spacing="3">L3 · IDENTITY LAYER</text>
+      <text x="14" y="42" fill="#e8e4dc" font-size="11">resolveTapUrl(req) · fingerprint(persona, ua, ip)</text>
+      <text x="14" y="58" fill="#a9b4bf" font-size="9">Persona ∈ {metal, demo, ar, gov, file, scan}</text>
+      <text x="14" y="72" fill="#a9b4bf" font-size="9">Channel ∈ {nfc, qr, ar, ble, wifi, usb, link}</text>
+    </g>
+
+    <!-- L4 STATE/BUSINESS -->
+    <g transform="translate(20 300)">
+      <rect width="500" height="80" fill="none" stroke="#00e5c8" stroke-width="1.2"/>
+      <text x="14" y="22" fill="#c9a84c" font-size="9" letter-spacing="3">L4 · STATE / BUSINESS</text>
+      <text x="14" y="42" fill="#e8e4dc" font-size="11">Supabase Postgres · RLS · audit_events</text>
+      <text x="14" y="58" fill="#a9b4bf" font-size="9">tap_events · challenge_attempts · risk_events</text>
+      <text x="14" y="72" fill="#a9b4bf" font-size="9">device_telemetry · orgs · subscriptions</text>
+    </g>
+
+    <!-- L5 INTEGRATIONS -->
+    <g transform="translate(20 390)">
+      <rect width="500" height="80" fill="none" stroke="#e8e4dc" stroke-width="1"/>
+      <text x="14" y="22" fill="#c9a84c" font-size="9" letter-spacing="3">L5 · INTEGRATIONS</text>
+      <text x="14" y="42" fill="#e8e4dc" font-size="11">Resend · Stripe · n8n · jose JWT</text>
+      <text x="14" y="58" fill="#a9b4bf" font-size="9">first-tap email · subscription lifecycle</text>
+      <text x="14" y="72" fill="#a9b4bf" font-size="9">tap-to-revenue workflow · gov gate</text>
+    </g>
+
+    <!-- L6 DEVICE/EMBEDDED -->
+    <g transform="translate(20 480)">
+      <rect width="500" height="80" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
+      <text x="14" y="22" fill="#c9a84c" font-size="9" letter-spacing="3">L6 · DEVICE / EMBEDDED</text>
+      <text x="14" y="42" fill="#e8e4dc" font-size="11">ESP32-S3 firmware · cybercard_v0.ino</text>
+      <text x="14" y="58" fill="#a9b4bf" font-size="9">modules: identity · display · imu · input · network</text>
+      <text x="14" y="72" fill="#a9b4bf" font-size="9">TX gated by long-press + backend allow-list</text>
+    </g>
+
+    <!-- L7 PHYSICAL -->
+    <g transform="translate(20 570)">
+      <rect width="500" height="50" fill="none" stroke="#e8e4dc" stroke-width="1"/>
+      <text x="14" y="20" fill="#c9a84c" font-size="9" letter-spacing="3">L7 · PHYSICAL</text>
+      <text x="14" y="40" fill="#e8e4dc" font-size="11">316L card · NTAG216 · QR · AR marker · LiPo + ESP32</text>
+    </g>
+  </g>
+
+  <!-- arrows + sequence on right -->
+  <g transform="translate(680 130)">
+    <text fill="#c9a84c" font-size="11" letter-spacing="6">// TAP-TO-AUDIT SEQUENCE</text>
+    <g font-size="10" letter-spacing="2" fill="#a9b4bf">
+      <text y="30">01  Phone reads NTAG216 NDEF</text>
+      <text y="50">02  Browser opens /tap?card_id=metal_v1</text>
+      <text y="70">03  TapClient posts to /api/tap</text>
+      <text y="90">04  resolveTapUrl normalizes channel</text>
+      <text y="110">05  fingerprint = sha256(persona, ua_hash, ip_bucket)</text>
+      <text y="130">06  Insert tap_events (RLS bypassed by service role)</text>
+      <text y="150">07  audit_events row appended</text>
+      <text y="170">08  If first tap → Resend email</text>
+      <text y="190">09  Dashboard streams tap row</text>
+      <text y="210">10  Optional ESP32 telemetry corroboration</text>
+    </g>
+
+    <text y="250" fill="#c9a84c" font-size="11" letter-spacing="6">// LATENCY BUDGET p95 ≤ 600 ms</text>
+    <g font-size="10" letter-spacing="2" fill="#a9b4bf">
+      <text y="270">T_tx           ≤ 120 ms</text>
+      <text y="290">T_processing   ≤ 180 ms</text>
+      <text y="310">T_db_write     ≤ 200 ms</text>
+      <text y="330">T_render       ≤ 100 ms</text>
+    </g>
+
+    <text y="370" fill="#c9a84c" font-size="11" letter-spacing="6">// REFUSAL SCOPE</text>
+    <g font-size="10" letter-spacing="2" fill="#ff7c95">
+      <text y="390">× no badge cloning instructions</text>
+      <text y="410">× no rolling-code replay</text>
+      <text y="430">× no credential capture portals</text>
+      <text y="450">× no non-consensual telemetry</text>
+      <text y="470">× no exploit dropper BadUSB</text>
+    </g>
+
+    <text y="510" fill="#c9a84c" font-size="11" letter-spacing="6">// MIRRORING THE CARD</text>
+    <g font-size="9" letter-spacing="2" fill="#a9b4bf">
+      <text y="530">L1 face engraving      ↔ L1 presentation</text>
+      <text y="548">L2 ferrite shield      ↔ L2 edge/API</text>
+      <text y="566">L3 coil identity        ↔ L3 identity layer</text>
+      <text y="584">L4 PCB core             ↔ L4 state/business</text>
+      <text y="602">L5 components           ↔ L5 integrations</text>
+      <text y="620">L6 traces & vias        ↔ L6 device firmware</text>
+      <text y="638">L7 back shell           ↔ L7 physical artifact</text>
+    </g>
+  </g>
+
+  <text x="60" y="780" fill="#a9b4bf" font-size="9" letter-spacing="3">FIG. 06 — SOFTWARE / HARDWARE LAYER MIRROR · ONE NDEF URL DRIVES ALL TRIGGERS · TAG IS PUBLIC, BACKEND IS AUTHORITATIVE</text>
+</svg>

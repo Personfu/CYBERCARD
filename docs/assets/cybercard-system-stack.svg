@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="CyberCard system stack">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#05070a"/>
+      <stop offset="1" stop-color="#11151c"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" x2="1">
+      <stop offset="0" stop-color="#00e5c8" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#6fffe9" stop-opacity="0.75"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <style>
+      text{font-family:Consolas,Monaco,monospace;fill:#e8e4dc}.tiny{font-size:17px;fill:#8b949e}.label{font-size:20px;font-weight:700}.title{font-size:34px;font-weight:800;letter-spacing:2px}.box{fill:#0d1117;stroke:#26313d;stroke-width:2}.hot{stroke:#00e5c8}.gold{stroke:#c9a84c}.line{stroke:#00e5c8;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5c8"/></marker>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <path d="M0 120H1280M0 240H1280M0 360H1280M0 480H1280M0 600H1280M160 0V720M320 0V720M480 0V720M640 0V720M800 0V720M960 0V720M1120 0V720" stroke="#1b2530" stroke-width="1" opacity="0.45"/>
+  <text x="54" y="64" class="title">CYBERCARD / CYBERFLIPPER SYSTEM STACK</text>
+  <text x="56" y="94" class="tiny">Trust lives in the network handshake. Tags, QR codes, and demos are triggers, not secrets.</text>
+
+  <rect x="70" y="150" width="220" height="110" rx="10" class="box hot" filter="url(#glow)"/>
+  <text x="95" y="190" class="label">Physical Card</text>
+  <text x="95" y="222" class="tiny">NTAG216 · QR · AR marker</text>
+
+  <rect x="70" y="390" width="220" height="110" rx="10" class="box gold"/>
+  <text x="95" y="430" class="label">CyberFlipper</text>
+  <text x="95" y="462" class="tiny">Flipper Zero + Wi-Fi board</text>
+
+  <rect x="360" y="150" width="250" height="110" rx="10" class="box hot"/>
+  <text x="390" y="190" class="label">/tap Web App</text>
+  <text x="390" y="222" class="tiny">Next.js Edge · vCard · LinkedIn</text>
+
+  <rect x="360" y="390" width="250" height="110" rx="10" class="box gold"/>
+  <text x="390" y="430" class="label">Lab Device</text>
+  <text x="390" y="462" class="tiny">ESP32-S3 · CC1101 · NFC</text>
+
+  <rect x="690" y="150" width="250" height="110" rx="10" class="box hot"/>
+  <text x="720" y="190" class="label">API Layer</text>
+  <text x="720" y="222" class="tiny">tap · vcard · challenge · gov</text>
+
+  <rect x="690" y="390" width="250" height="110" rx="10" class="box gold"/>
+  <text x="720" y="430" class="label">Research Modes</text>
+  <text x="720" y="462" class="tiny">RF scan · IR · iButton · OSINT</text>
+
+  <rect x="1010" y="150" width="210" height="110" rx="10" class="box hot"/>
+  <text x="1035" y="190" class="label">Backend</text>
+  <text x="1035" y="222" class="tiny">Supabase · Resend · Stripe</text>
+
+  <rect x="1010" y="390" width="210" height="110" rx="10" class="box gold"/>
+  <text x="1035" y="430" class="label">SOC View</text>
+  <text x="1035" y="462" class="tiny">Audit · telemetry · dashboard</text>
+
+  <path class="line" d="M290 205H360"/><path class="line" d="M610 205H690"/><path class="line" d="M940 205H1010"/>
+  <path class="line" d="M290 445H360"/><path class="line" d="M610 445H690"/><path class="line" d="M940 445H1010"/>
+  <path d="M180 260V390" stroke="#c9a84c" stroke-width="2" stroke-dasharray="8 8"/>
+  <path d="M815 260V390" stroke="#c9a84c" stroke-width="2" stroke-dasharray="8 8"/>
+
+  <text x="72" y="635" class="tiny">Public product layer: card -> tap -> contact automation. Private lab layer: authorized RF/NFC/IR/BLE/USB learning with strict telemetry and consent boundaries.</text>
+</svg>

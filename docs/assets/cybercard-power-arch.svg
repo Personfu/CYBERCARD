@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" role="img" aria-label="CyberCard power architecture">
+  <title>CyberCard — Power Architecture &amp; Budget</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0c"/><stop offset="1" stop-color="#111114"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(0,229,200,0.05)" stroke-width="0.5"/></pattern>
+    <marker id="arP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#c9a84c"/></marker>
+  </defs>
+  <style>
+    .blk { fill: rgba(255,255,255,0.025); stroke: rgba(0,229,200,0.5); }
+    .pwr { fill: rgba(201,168,76,0.08); stroke: rgba(201,168,76,0.6); }
+    .h { font: 700 11px ui-monospace, Consolas, monospace; letter-spacing: 3px; fill: #f5f5f7; }
+    .s { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #9da0a8; }
+    .g { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #c9a84c; }
+    .rail { stroke: #c9a84c; stroke-width: 2.2; fill: none; }
+    .sense { stroke: rgba(0,229,200,0.6); stroke-width: 1; fill: none; stroke-dasharray: 3 3; }
+  </style>
+
+  <rect width="1100" height="540" fill="url(#bg)"/>
+  <rect width="1100" height="540" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="3" fill="#6b6b72">
+    <text x="40" y="38">PERSONFU // FLLC.NET</text>
+    <text x="1060" y="38" text-anchor="end">CYBERCARD / POWER_ARCH_v1</text>
+  </g>
+  <text x="40" y="76" font-family="ui-monospace, Consolas, monospace" font-size="20" letter-spacing="6" fill="#f5f5f7">POWER ARCHITECTURE — Li-Po 150 mAh · USB-C 5 V · ENERGY HARVEST</text>
+
+  <!-- Left: sources -->
+  <g transform="translate(60 130)">
+    <rect width="180" height="64" rx="6" class="pwr"/>
+    <text x="14" y="22" class="h">USB-C 5V/2A</text>
+    <text x="14" y="42" class="s">VBUS · CC1/CC2 · Rd 5.1 kΩ</text>
+    <text x="14" y="58" class="g">SAFE-SAFE: TVS + ESD</text>
+  </g>
+  <g transform="translate(60 224)">
+    <rect width="180" height="64" rx="6" class="pwr"/>
+    <text x="14" y="22" class="h">Li-Po 3.7 V · 150 mAh</text>
+    <text x="14" y="42" class="s">PROTECTED CELL · NTC</text>
+    <text x="14" y="58" class="g">555 mWh · &gt;500 cycles</text>
+  </g>
+  <g transform="translate(60 318)">
+    <rect width="180" height="64" rx="6" class="pwr"/>
+    <text x="14" y="22" class="h">NFC HARVEST (opt)</text>
+    <text x="14" y="42" class="s">PN5180 RF + AS3955 ENERGY</text>
+    <text x="14" y="58" class="g">~1–4 mW · DEMO ONLY</text>
+  </g>
+
+  <!-- Charger -->
+  <g transform="translate(290 200)">
+    <rect width="200" height="120" rx="6" class="blk"/>
+    <text x="14" y="22" class="h">BQ25180 LINEAR CHG</text>
+    <text x="14" y="40" class="s">I_CHG 100 mA · 4.2 V</text>
+    <text x="14" y="56" class="s">JEITA · NTC · OTP</text>
+    <text x="14" y="76" class="s">PATH MGMT (USB or BAT)</text>
+    <text x="14" y="100" class="g">FUEL GAUGE I²C</text>
+  </g>
+
+  <!-- Buck/LDO rails -->
+  <g transform="translate(540 110)">
+    <rect width="220" height="72" rx="6" class="blk"/>
+    <text x="14" y="22" class="h">TPS62840 BUCK 1V8</text>
+    <text x="14" y="42" class="s">η &gt; 92% @ 10 mA · IQ 60 nA</text>
+    <text x="14" y="60" class="g">RAIL: 1V8_DIG · 200 mA</text>
+  </g>
+  <g transform="translate(540 200)">
+    <rect width="220" height="72" rx="6" class="blk"/>
+    <text x="14" y="22" class="h">TPS62840 BUCK 3V3</text>
+    <text x="14" y="42" class="s">η &gt; 90% @ 50 mA · PFM</text>
+    <text x="14" y="60" class="g">RAIL: 3V3_SYS · 500 mA</text>
+  </g>
+  <g transform="translate(540 290)">
+    <rect width="220" height="72" rx="6" class="blk"/>
+    <text x="14" y="22" class="h">TLV713 LDO 3V0_RF</text>
+    <text x="14" y="42" class="s">PSRR 70 dB · 200 mA</text>
+    <text x="14" y="60" class="g">RAIL: 3V0_RF (CLEAN)</text>
+  </g>
+  <g transform="translate(540 380)">
+    <rect width="220" height="64" rx="6" class="blk"/>
+    <text x="14" y="22" class="h">LOAD SWITCH (TPS22)</text>
+    <text x="14" y="42" class="s">SOFT-START · OCP</text>
+    <text x="14" y="58" class="g">RAIL: VDD_OLED gated</text>
+  </g>
+
+  <!-- Loads -->
+  <g transform="translate(810 110)">
+    <rect width="240" height="60" rx="6" class="blk"/>
+    <text x="14" y="22" class="h">ESP32-S3 + RAM</text>
+    <text x="14" y="42" class="s">SLEEP 4 µA · ACTIVE 60 mA</text>
+  </g>
+  <g transform="translate(810 184)">
+    <rect width="240" height="60" rx="6" class="blk"/>
+    <text x="14" y="22" class="h">PN5180 + ATECC608</text>
+    <text x="14" y="42" class="s">IDLE 100 µA · TX 80 mA (burst)</text>
+  </g>
+  <g transform="translate(810 258)">
+    <rect width="240" height="60" rx="6" class="blk"/>
+    <text x="14" y="22" class="h">CC1101 + IMU</text>
+    <text x="14" y="42" class="s">RX 17 mA · IMU 0.5 mA</text>
+  </g>
+  <g transform="translate(810 332)">
+    <rect width="240" height="60" rx="6" class="blk"/>
+    <text x="14" y="22" class="h">SH1107 OLED</text>
+    <text x="14" y="42" class="s">ACTIVE 12 mA · OFF 0 µA</text>
+  </g>
+
+  <!-- Rails -->
+  <g>
+    <path class="rail" d="M240 162 L290 220" marker-end="url(#arP)"/>
+    <path class="rail" d="M240 256 L290 256" marker-end="url(#arP)"/>
+    <path class="rail" d="M240 350 L290 290" marker-end="url(#arP)"/>
+    <path class="rail" d="M490 240 L540 146" marker-end="url(#arP)"/>
+    <path class="rail" d="M490 260 L540 236" marker-end="url(#arP)"/>
+    <path class="rail" d="M490 280 L540 326" marker-end="url(#arP)"/>
+    <path class="rail" d="M490 300 L540 412" marker-end="url(#arP)"/>
+    <path class="rail" d="M760 146 L810 140" marker-end="url(#arP)"/>
+    <path class="rail" d="M760 236 L810 214" marker-end="url(#arP)"/>
+    <path class="rail" d="M760 326 L810 288" marker-end="url(#arP)"/>
+    <path class="rail" d="M760 412 L810 362" marker-end="url(#arP)"/>
+  </g>
+
+  <!-- Budget table -->
+  <g transform="translate(60 410)">
+    <rect width="450" height="110" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(0,229,200,0.35)"/>
+    <text x="14" y="22" class="h">POWER BUDGET</text>
+    <g transform="translate(14 38)" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#9da0a8">
+      <text>STATE         I_AVG    DUTY   E/HR        DAYS@150mAh</text>
+      <text y="14" fill="#00e5c8">DEEP-SLEEP    4 µA     97%   14.6 µWh     ≈ 380 d</text>
+      <text y="28" fill="#00e5c8">TAP BURST     45 mA    1%    1.66 mWh/tap ≈ 330 taps/hr</text>
+      <text y="42" fill="#c9a84c">DISPLAY ON    18 mA    1.5%  100 mWh      ≈ 5.5 d</text>
+      <text y="56" fill="#c9a84c">BLE PAIRING   28 mA    0.5%  52 mWh       —</text>
+    </g>
+  </g>
+</svg>

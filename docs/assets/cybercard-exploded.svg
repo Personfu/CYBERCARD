@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" role="img" aria-label="Card mechanical exploded view">
+  <title>CyberCard — Mechanical Exploded View</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0c"/><stop offset="1" stop-color="#111114"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(0,229,200,0.05)" stroke-width="0.5"/></pattern>
+    <linearGradient id="metalT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2b31"/><stop offset="1" stop-color="#0e0f12"/></linearGradient>
+    <linearGradient id="pcbT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="rgba(0,80,40,0.7)"/><stop offset="1" stop-color="rgba(0,40,20,0.7)"/></linearGradient>
+  </defs>
+  <style>
+    .h { font: 700 11px ui-monospace, Consolas, monospace; letter-spacing: 3px; fill: #f5f5f7; }
+    .s { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #9da0a8; }
+    .t { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #00e5c8; }
+    .g { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #c9a84c; }
+    .lead { stroke: rgba(255,255,255,0.3); stroke-dasharray: 3 3; fill: none; }
+  </style>
+
+  <rect width="1100" height="540" fill="url(#bg)"/>
+  <rect width="1100" height="540" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="3" fill="#6b6b72">
+    <text x="40" y="38">PERSONFU // FLLC.NET</text>
+    <text x="1060" y="38" text-anchor="end">CYBERCARD / EXPLODED_VIEW_v1</text>
+  </g>
+  <text x="40" y="76" font-family="ui-monospace, Consolas, monospace" font-size="20" letter-spacing="6" fill="#f5f5f7">MECHANICAL EXPLODED VIEW — ID-1 · 0.84 MM</text>
+
+  <!-- Layers, isometric-ish -->
+  <g transform="translate(120 220) skewY(-12)">
+    <!-- shadow -->
+    <rect x="6" y="14" width="500" height="160" rx="14" fill="rgba(0,0,0,0.4)"/>
+
+    <!-- L0 metal top -->
+    <g transform="translate(0 0)">
+      <rect width="500" height="160" rx="14" fill="url(#metalT)" stroke="rgba(0,229,200,0.55)"/>
+      <text x="14" y="22" class="h">[1] BRUSHED Ti TOP · 0.20 mm</text>
+      <text x="14" y="40" class="s">Laser engrave · CNC champagne edge</text>
+    </g>
+
+    <!-- L1 PCB -->
+    <g transform="translate(0 80)">
+      <rect width="500" height="140" rx="10" fill="url(#pcbT)" stroke="rgba(0,229,200,0.45)"/>
+      <text x="14" y="22" class="h">[2] PCB 4-LAYER · 0.40 mm</text>
+      <text x="14" y="40" class="s">L1 NFC coil · L2 GND · L3 PWR · L4 art</text>
+    </g>
+
+    <!-- L2 battery -->
+    <g transform="translate(0 160)">
+      <rect width="500" height="100" rx="10" fill="rgba(201,168,76,0.18)" stroke="rgba(201,168,76,0.5)"/>
+      <text x="14" y="22" class="h">[3] LiPo CELL 401622 · 150 mAh · 0.16 mm</text>
+      <text x="14" y="40" class="s">UL · NTC · cycled &gt;500</text>
+    </g>
+
+    <!-- L3 metal bottom -->
+    <g transform="translate(0 240)">
+      <rect width="500" height="80" rx="14" fill="url(#metalT)" stroke="rgba(0,229,200,0.55)"/>
+      <text x="14" y="22" class="h">[4] BRUSHED Ti BACK · 0.20 mm</text>
+      <text x="14" y="40" class="s">QR engrave · serial · part marks</text>
+    </g>
+
+    <!-- L4 mask -->
+    <g transform="translate(0 310)">
+      <rect width="500" height="36" rx="14" fill="rgba(0,0,0,0.6)" stroke="rgba(255,255,255,0.18)"/>
+      <text x="14" y="22" class="h">[5] PU FILM CAP · 0.04 mm</text>
+    </g>
+  </g>
+
+  <!-- Right callouts -->
+  <g transform="translate(680 130)">
+    <text class="h" font-size="12">BUILD-OF-MATERIALS HIGHLIGHTS</text>
+    <g transform="translate(0 24)">
+      <rect width="380" height="68" rx="6" fill="rgba(0,229,200,0.06)" stroke="rgba(0,229,200,0.5)"/>
+      <text x="14" y="22" class="h">[1] Ti GRADE 2 — 4×4 BRUSHED</text>
+      <text x="14" y="40" class="s">CTE 8.6 µ/m·K · density 4.51 g/cm³</text>
+      <text x="14" y="56" class="s">EDM cut · sandblast · DLC topcoat</text>
+    </g>
+    <g transform="translate(0 100)">
+      <rect width="380" height="68" rx="6" fill="rgba(0,229,200,0.06)" stroke="rgba(0,229,200,0.5)"/>
+      <text x="14" y="22" class="h">[2] FR-4 TG170 · ENIG</text>
+      <text x="14" y="40" class="s">Ant cutout L2 · controlled impedance</text>
+      <text x="14" y="56" class="s">Hot-bar bond pads top &amp; bottom</text>
+    </g>
+    <g transform="translate(0 176)">
+      <rect width="380" height="68" rx="6" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.5)"/>
+      <text x="14" y="22" class="h">[3] LIPO 401622 — 150 mAh</text>
+      <text x="14" y="40" class="s">Spring contacts · NTC into BQ25180</text>
+      <text x="14" y="56" class="s">Replaceable in service tool</text>
+    </g>
+    <g transform="translate(0 252)">
+      <rect width="380" height="68" rx="6" fill="rgba(255,255,255,0.025)" stroke="rgba(0,229,200,0.4)"/>
+      <text x="14" y="22" class="h">[4] Ti BACK + [5] PU CAP</text>
+      <text x="14" y="40" class="s">Adhesive: 3M VHB-RP25 · 0.05 mm</text>
+      <text x="14" y="56" class="s">IP54 · drop 1.0 m to wood</text>
+    </g>
+    <g transform="translate(0 328)">
+      <text class="t">TOTAL THK 0.84 mm · MASS ≈ 26 g · ID-1 PASS</text>
+      <text y="16" class="g">RoHS · REACH · UN38.3 (cell)</text>
+    </g>
+  </g>
+</svg>

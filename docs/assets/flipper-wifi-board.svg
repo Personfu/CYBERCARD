@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" role="img" aria-label="Flipper Wi-Fi dev board pinout">
+  <title>CyberFlipper — Wi-Fi Dev Board Pinout (ESP32-S2)</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0c"/><stop offset="1" stop-color="#111114"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(0,229,200,0.05)" stroke-width="0.5"/></pattern>
+  </defs>
+  <style>
+    .h { font: 700 12px ui-monospace, Consolas, monospace; letter-spacing: 3px; fill: #f5f5f7; }
+    .s { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #9da0a8; }
+    .pin { font: 9px ui-monospace, Consolas, monospace; fill: #c9a84c; }
+    .pin-l { font: 9px ui-monospace, Consolas, monospace; fill: #00e5c8; }
+    .body { fill: #14151a; stroke: rgba(0,229,200,0.5); }
+    .module { fill: #1c1d22; stroke: rgba(255,255,255,0.15); }
+    .ant { fill: rgba(201,168,76,0.18); stroke: rgba(201,168,76,0.6); }
+    .pad { fill: #c9a84c; }
+  </style>
+  <rect width="1100" height="540" fill="url(#bg)"/>
+  <rect width="1100" height="540" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="3" fill="#6b6b72">
+    <text x="40" y="38">PERSONFU // FLLC.NET</text>
+    <text x="1060" y="38" text-anchor="end">CYBERFLIPPER / WIFI_BOARD_PINOUT_v1</text>
+  </g>
+  <text x="40" y="76" font-family="ui-monospace, Consolas, monospace" font-size="20" letter-spacing="6" fill="#f5f5f7">FLIPPER WI-FI DEV BOARD — ESP32-S2 PINOUT</text>
+  <text x="40" y="98" font-family="ui-monospace, Consolas, monospace" font-size="11" letter-spacing="3" fill="#00e5c8" opacity="0.8">USB-C · 18-PIN GPIO HEADER · MARAUDER / EVIL PORTAL DEMOS · AWARENESS USE ONLY</text>
+
+  <!-- Board outline -->
+  <g transform="translate(180 130)">
+    <rect width="540" height="280" rx="10" class="body"/>
+    <!-- USB-C -->
+    <rect x="-30" y="120" width="40" height="36" rx="4" fill="#0a0a0c" stroke="rgba(255,255,255,0.4)"/>
+    <text x="-10" y="142" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#9da0a8" text-anchor="middle">USB-C</text>
+
+    <!-- ESP32-S2 module -->
+    <rect x="60" y="40" width="220" height="200" rx="6" class="module"/>
+    <text x="170" y="64" class="h" text-anchor="middle">ESP32-S2-WROOM</text>
+    <text x="170" y="80" class="s" text-anchor="middle">240 MHz · 4 MB FLASH · Wi-Fi 4</text>
+    <!-- module antenna -->
+    <rect x="60" y="40" width="40" height="24" class="ant"/>
+    <text x="80" y="56" font-family="ui-monospace, Consolas, monospace" font-size="8" letter-spacing="2" fill="#c9a84c" text-anchor="middle">ANT</text>
+
+    <!-- Boot/Reset -->
+    <rect x="320" y="60" width="40" height="20" rx="3" class="module"/>
+    <text x="340" y="74" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#f5f5f7" text-anchor="middle">BOOT</text>
+    <rect x="380" y="60" width="40" height="20" rx="3" class="module"/>
+    <text x="400" y="74" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#f5f5f7" text-anchor="middle">RESET</text>
+
+    <!-- LEDs -->
+    <circle cx="340" cy="120" r="4" fill="#00e5c8"/>
+    <text x="350" y="124" class="s">PWR</text>
+    <circle cx="340" cy="140" r="4" fill="#c9a84c"/>
+    <text x="350" y="144" class="s">TX/RX</text>
+
+    <!-- BQ24295 charger -->
+    <rect x="320" y="170" width="100" height="50" rx="4" class="module"/>
+    <text x="370" y="190" class="s" text-anchor="middle">BQ24295</text>
+    <text x="370" y="206" class="s" text-anchor="middle" fill="#c9a84c">USB-C PD CHG</text>
+
+    <!-- 18 pin header bottom -->
+    <g>
+      <rect x="40" y="252" width="460" height="18" rx="3" fill="#0a0a0c" stroke="rgba(0,229,200,0.4)"/>
+      <g class="pad" transform="translate(60 252)">
+        <!-- pads -->
+        <g>
+          <rect width="6" height="18"/><rect x="24" width="6" height="18"/><rect x="48" width="6" height="18"/>
+          <rect x="72" width="6" height="18"/><rect x="96" width="6" height="18"/><rect x="120" width="6" height="18"/>
+          <rect x="144" width="6" height="18"/><rect x="168" width="6" height="18"/><rect x="192" width="6" height="18"/>
+          <rect x="216" width="6" height="18"/><rect x="240" width="6" height="18"/><rect x="264" width="6" height="18"/>
+          <rect x="288" width="6" height="18"/><rect x="312" width="6" height="18"/><rect x="336" width="6" height="18"/>
+          <rect x="360" width="6" height="18"/><rect x="384" width="6" height="18"/><rect x="408" width="6" height="18"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Pin labels - left column (top header on Flipper) -->
+  <g font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2">
+    <g transform="translate(60 140)">
+      <text class="h" font-size="11">FLIPPER PINS</text>
+      <text y="20" class="pin">1  · 5V_USB     IN/OUT</text>
+      <text y="36" class="pin">2  · 3V3        IN</text>
+      <text y="52" class="pin">3  · SWCLK</text>
+      <text y="68" class="pin">4  · GND</text>
+      <text y="84" class="pin">5  · GPIO0  · BOOT</text>
+      <text y="100" class="pin">6  · GPIO1</text>
+      <text y="116" class="pin">7  · TX (UART)</text>
+      <text y="132" class="pin">8  · RX (UART)</text>
+      <text y="148" class="pin">9  · GPIO5  · LED</text>
+    </g>
+    <g transform="translate(820 140)">
+      <text class="h" font-size="11">DEMO MAP</text>
+      <text y="20" class="pin-l">UART → Marauder console</text>
+      <text y="36" class="pin-l">USB-C → power + flash</text>
+      <text y="52" class="pin-l">ANT → 2.4 GHz +18 dBm</text>
+      <text y="68" class="pin-l">Use: lab Wi-Fi awareness</text>
+      <text y="92" class="pin" fill="#c9a84c">SAFETY</text>
+      <text y="106" class="s">Owned networks only</text>
+      <text y="120" class="s">No deauth on production</text>
+      <text y="134" class="s">No credential capture</text>
+      <text y="148" class="s">Consent-first portal copy</text>
+    </g>
+  </g>
+
+  <!-- Footer dimensions -->
+  <g transform="translate(180 460)" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#9da0a8">
+    <text>BOARD 39 × 19 mm · 4-LAYER · ENIG · USB-C 5 V/2 A · ANTENNA: PCB INVERTED-F</text>
+    <text y="16" fill="#00e5c8">FW: ESPHome · Marauder · Evil Portal (lab variant) · Wireguard relay (owned)</text>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="CyberCard exploded hardware view">
+  <defs><style>text{font-family:Consolas,monospace;fill:#e8e4dc}.t{font-size:32px;font-weight:800}.s{font-size:18px;fill:#9aa4ad}.n{font-size:16px;fill:#c9a84c}.line{stroke:#00e5c8;stroke-width:2}.card{fill:#0d1117;stroke:#00e5c8;stroke-width:3}.part{fill:#151b23;stroke:#384758;stroke-width:2}.gold{stroke:#c9a84c}.cyan{stroke:#00e5c8}</style></defs>
+  <rect width="1280" height="720" fill="#06070a"/>
+  <text x="58" y="64" class="t">CYBERCARD DEVICE · EXPLODED VIEW</text>
+  <text x="60" y="96" class="s">Prototype target: prove concept first, miniaturize later. Production target: 85.6 × 54 mm card form factor + optional 55 × 35 × 8 mm active module.</text>
+  <rect x="200" y="170" width="880" height="390" rx="26" class="card"/>
+  <rect x="235" y="205" width="170" height="120" rx="10" class="part cyan"/><text x="255" y="250" class="n">NTAG216</text><text x="255" y="278" class="s">13.56 MHz</text><text x="255" y="304" class="s">ISO14443A</text>
+  <rect x="445" y="205" width="220" height="120" rx="10" class="part"/><text x="465" y="250" class="n">QR + AR Marker</text><text x="465" y="278" class="s">/tap URL</text><text x="465" y="304" class="s">marker recognition</text>
+  <rect x="710" y="205" width="230" height="120" rx="10" class="part gold"/><text x="730" y="250" class="n">DEFCON Hash</text><text x="730" y="278" class="s">challenge funnel</text><text x="730" y="304" class="s">consent + audit</text>
+  <rect x="300" y="380" width="185" height="100" rx="10" class="part"/><text x="320" y="420" class="n">ESP32-S3</text><text x="320" y="448" class="s">Wi-Fi · BLE · USB</text>
+  <rect x="520" y="380" width="185" height="100" rx="10" class="part"/><text x="540" y="420" class="n">CC1101</text><text x="540" y="448" class="s">300-928 MHz</text>
+  <rect x="740" y="380" width="185" height="100" rx="10" class="part"/><text x="760" y="420" class="n">PN5180</text><text x="760" y="448" class="s">NFC reader/write</text>
+  <path class="line" d="M320 325V380"/><path class="line" d="M585 325V380"/><path class="line" d="M825 325V380"/>
+  <text x="96" y="620" class="s">Optional expansions: IR LED/receiver, iButton 1-Wire probe, microSD telemetry cache, USB-C CDC/HID demo mode, LiPo + charger, OLED status.</text>
+</svg>

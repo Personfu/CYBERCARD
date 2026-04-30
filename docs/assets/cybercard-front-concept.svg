@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 856 540" role="img" aria-label="CyberCard front concept render">
+  <title>CyberCard — Front Concept</title>
+  <desc>Premium brushed-metal NFC business card, ID-1 form factor, FLLC.net theme.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0c"/>
+      <stop offset="1" stop-color="#111114"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1d22"/>
+      <stop offset="0.45" stop-color="#2a2b31"/>
+      <stop offset="0.55" stop-color="#202126"/>
+      <stop offset="1" stop-color="#0e0f12"/>
+    </linearGradient>
+    <linearGradient id="brush" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="0.5" stop-color="rgba(255,255,255,0.045)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(0,229,200,0.65)"/>
+      <stop offset="1" stop-color="rgba(201,168,76,0.55)"/>
+    </linearGradient>
+    <radialGradient id="coilGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="rgba(0,229,200,0.35)"/>
+      <stop offset="1" stop-color="rgba(0,229,200,0)"/>
+    </radialGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="rgba(0,229,200,0.05)" stroke-width="0.5"/>
+    </pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+
+  <rect width="856" height="540" fill="url(#bg)"/>
+  <rect width="856" height="540" fill="url(#grid)"/>
+
+  <!-- Caption strap -->
+  <g font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="3" fill="#6b6b72">
+    <text x="40" y="38">PERSONFU // FLLC.NET</text>
+    <text x="816" y="38" text-anchor="end">CYBERCARD / CONCEPT_FRONT_v1</text>
+    <text x="40" y="514">FORM FACTOR — ISO/IEC 7810 ID-1 · 85.60 × 53.98 × 0.84 MM</text>
+    <text x="816" y="514" text-anchor="end" fill="#00e5c8" opacity="0.7">● LIVE</text>
+  </g>
+
+  <!-- Card body -->
+  <g transform="translate(108 110)">
+    <!-- Shadow -->
+    <rect x="6" y="14" width="640" height="320" rx="22" fill="rgba(0,0,0,0.55)" filter="url(#glow)"/>
+    <!-- Card -->
+    <rect width="640" height="320" rx="20" fill="url(#metal)" stroke="url(#edge)" stroke-width="1.2"/>
+    <!-- Brush highlights -->
+    <rect width="640" height="320" rx="20" fill="url(#brush)"/>
+    <g stroke="rgba(255,255,255,0.05)" stroke-width="0.5">
+      <line x1="0" y1="60" x2="640" y2="60"/>
+      <line x1="0" y1="120" x2="640" y2="120"/>
+      <line x1="0" y1="180" x2="640" y2="180"/>
+      <line x1="0" y1="240" x2="640" y2="240"/>
+    </g>
+
+    <!-- Top eyebrow -->
+    <g font-family="ui-monospace, Consolas, monospace" letter-spacing="3">
+      <circle cx="32" cy="32" r="3" fill="#00e5c8"/>
+      <circle cx="32" cy="32" r="6" fill="none" stroke="rgba(0,229,200,0.4)"/>
+      <text x="46" y="36" font-size="9" fill="#00e5c8" opacity="0.85">PERSONFU // SYSTEM</text>
+      <text x="608" y="36" font-size="9" fill="#6b6b72" text-anchor="end">CARD_ID · 0xPF-01-A7F3</text>
+    </g>
+
+    <!-- Identity block -->
+    <g font-family="ui-monospace, Consolas, monospace">
+      <text x="32" y="118" font-size="34" font-weight="700" letter-spacing="6" fill="#f5f5f7">PRESTON&#160;FURULIE</text>
+      <text x="32" y="146" font-size="11" letter-spacing="3" fill="#c9a84c" opacity="0.9">SECURITY ENGINEER · RF / NFC / EMBEDDED</text>
+      <text x="32" y="166" font-size="10" letter-spacing="3" fill="#6b6b72">FURULIELLC · PCNAS / ASCEND · DEFCON</text>
+    </g>
+
+    <!-- Tap target -->
+    <g transform="translate(478 178)">
+      <circle r="86" fill="url(#coilGlow)"/>
+      <circle r="58" fill="none" stroke="rgba(0,229,200,0.45)" stroke-width="1"/>
+      <circle r="46" fill="none" stroke="rgba(0,229,200,0.35)" stroke-width="1" stroke-dasharray="2 4"/>
+      <circle r="34" fill="none" stroke="rgba(0,229,200,0.55)" stroke-width="1"/>
+      <circle r="22" fill="none" stroke="rgba(0,229,200,0.7)" stroke-width="1"/>
+      <circle r="10" fill="rgba(0,229,200,0.18)" stroke="rgba(0,229,200,0.85)"/>
+      <circle r="3" fill="#00e5c8"/>
+      <text y="110" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="3" fill="#00e5c8" opacity="0.85">TAP HERE · 13.56 MHZ</text>
+    </g>
+
+    <!-- Bottom rail -->
+    <g font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="3" fill="#6b6b72">
+      <line x1="32" y1="252" x2="608" y2="252" stroke="rgba(255,255,255,0.06)"/>
+      <text x="32" y="276">FLLC.NET/TAP</text>
+      <text x="32" y="294" fill="#4a4a52">vCARD · LINKEDIN · CALENDLY · CTF</text>
+      <g text-anchor="end">
+        <text x="608" y="276" fill="#c9a84c" opacity="0.85">NTAG216 · 924B</text>
+        <text x="608" y="294">QR-FALLBACK · AR-OVERLAY · BLE-PAIR</text>
+      </g>
+    </g>
+
+    <!-- Cut corners highlight -->
+    <g fill="none" stroke="rgba(0,229,200,0.55)" stroke-width="1">
+      <path d="M0 14 L0 0 L14 0"/>
+      <path d="M640 14 L640 0 L626 0"/>
+      <path d="M0 306 L0 320 L14 320"/>
+      <path d="M640 306 L640 320 L626 320"/>
+    </g>
+  </g>
+
+  <!-- Right callouts -->
+  <g font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="2" fill="#9da0a8">
+    <line x1="748" y1="180" x2="800" y2="180" stroke="rgba(0,229,200,0.4)"/>
+    <text x="806" y="184" fill="#00e5c8">NFC TAP</text>
+    <line x1="748" y1="220" x2="800" y2="220" stroke="rgba(201,168,76,0.4)"/>
+    <text x="806" y="224" fill="#c9a84c">BRUSHED Ti</text>
+    <line x1="748" y1="260" x2="800" y2="260" stroke="rgba(255,255,255,0.2)"/>
+    <text x="806" y="264">LASER ENGRAVE</text>
+  </g>
+</svg>

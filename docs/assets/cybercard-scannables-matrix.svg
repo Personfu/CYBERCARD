@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" role="img" aria-label="Scannable identity vector matrix">
+  <title>CyberCard — Scannable Identity Vectors</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0c"/><stop offset="1" stop-color="#111114"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(0,229,200,0.05)" stroke-width="0.5"/></pattern>
+  </defs>
+  <style>
+    .card { fill: rgba(255,255,255,0.025); stroke: rgba(0,229,200,0.45); }
+    .card-g { fill: rgba(201,168,76,0.06); stroke: rgba(201,168,76,0.5); }
+    .h { font: 700 11px ui-monospace, Consolas, monospace; letter-spacing: 3px; fill: #f5f5f7; }
+    .s { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #9da0a8; }
+    .t { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #00e5c8; }
+    .g { font: 9px ui-monospace, Consolas, monospace; letter-spacing: 2px; fill: #c9a84c; }
+    .ico { fill: none; stroke: #00e5c8; stroke-width: 1.4; }
+    .ico-g { fill: none; stroke: #c9a84c; stroke-width: 1.4; }
+  </style>
+  <rect width="1100" height="600" fill="url(#bg)"/>
+  <rect width="1100" height="600" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, Consolas, monospace" font-size="10" letter-spacing="3" fill="#6b6b72">
+    <text x="40" y="38">PERSONFU // FLLC.NET</text>
+    <text x="1060" y="38" text-anchor="end">CYBERCARD / SCANNABLES_v1</text>
+  </g>
+  <text x="40" y="76" font-family="ui-monospace, Consolas, monospace" font-size="20" letter-spacing="6" fill="#f5f5f7">SCANNABLE IDENTITY VECTORS — CONSENT-FIRST CATALOG</text>
+  <text x="40" y="98" font-family="ui-monospace, Consolas, monospace" font-size="11" letter-spacing="3" fill="#00e5c8" opacity="0.8">EVERY VECTOR LANDS ON FLLC.NET/TAP · OWNER MAY HARD-DISABLE PER CARD_ID</text>
+
+  <!-- 9 cards 3x3 -->
+  <g transform="translate(40 130)">
+    <!-- 1 RESUME -->
+    <g><rect width="320" height="140" rx="6" class="card"/>
+      <g transform="translate(20 24)" class="ico"><rect width="50" height="64" rx="4"/><line x1="10" y1="16" x2="40" y2="16"/><line x1="10" y1="28" x2="40" y2="28"/><line x1="10" y1="40" x2="32" y2="40"/></g>
+      <text x="92" y="40" class="h">RESUME / CV</text>
+      <text x="92" y="58" class="s">Print QR · NFC sticker</text>
+      <text x="92" y="74" class="t">→ /tap?utm_source=resume</text>
+      <text x="92" y="90" class="s">Lands on vCard + LinkedIn</text>
+      <text x="92" y="116" class="g">CONSENT: implicit (you handed it over)</text>
+    </g>
+
+    <!-- 2 CONFERENCE BADGE -->
+    <g transform="translate(340 0)"><rect width="320" height="140" rx="6" class="card"/>
+      <g transform="translate(20 28)" class="ico"><rect width="50" height="56" rx="2"/><circle cx="25" cy="20" r="8"/><line x1="14" y1="40" x2="36" y2="40"/></g>
+      <text x="92" y="40" class="h">CONFERENCE BADGE</text>
+      <text x="92" y="58" class="s">DEFCON · BSides · Ham</text>
+      <text x="92" y="74" class="t">→ /tap?utm_source=defcon32</text>
+      <text x="92" y="90" class="s">Counter cap: 200 / day</text>
+      <text x="92" y="116" class="g">CONSENT: tap-only · no auto-action</text>
+    </g>
+
+    <!-- 3 HALLWAY PUZZLE -->
+    <g transform="translate(680 0)"><rect width="320" height="140" rx="6" class="card-g"/>
+      <g transform="translate(20 28)" class="ico-g"><polygon points="25,4 46,40 4,40"/><line x1="25" y1="14" x2="25" y2="30"/></g>
+      <text x="92" y="40" class="h">HALLWAY PUZZLE</text>
+      <text x="92" y="58" class="s">ROT/B64 ladder · breadcrumb</text>
+      <text x="92" y="74" class="g">→ /challenge/&lt;hash&gt;</text>
+      <text x="92" y="90" class="s">CTF flag awarded on solve</text>
+      <text x="92" y="116" class="g">CONSENT: opt-in puzzle scope</text>
+    </g>
+
+    <!-- 4 SPEAKER -->
+    <g transform="translate(0 160)"><rect width="320" height="140" rx="6" class="card"/>
+      <g transform="translate(20 30)" class="ico"><circle cx="25" cy="20" r="14"/><path d="M5 56 Q25 40 45 56"/></g>
+      <text x="92" y="40" class="h">SPEAKER INTRO</text>
+      <text x="92" y="58" class="s">Slide footer QR · BLE beacon</text>
+      <text x="92" y="74" class="t">→ /tap?utm_source=talk</text>
+      <text x="92" y="90" class="s">Bio · slides · RSS</text>
+      <text x="92" y="116" class="g">RATE-LIMITED · IP+UA buckets</text>
+    </g>
+
+    <!-- 5 HAM QSL -->
+    <g transform="translate(340 160)"><rect width="320" height="140" rx="6" class="card-g"/>
+      <g transform="translate(20 30)" class="ico-g"><path d="M5 30 Q25 0 45 30"/><path d="M14 30 Q25 14 36 30"/><circle cx="25" cy="30" r="3" fill="#c9a84c"/></g>
+      <text x="92" y="40" class="h">HAM QSL CARD</text>
+      <text x="92" y="58" class="s">KA7NSR-15 · APRS · 2m/70cm</text>
+      <text x="92" y="74" class="g">→ /tap?utm_source=qsl</text>
+      <text x="92" y="90" class="s">QSO log · grid · band</text>
+      <text x="92" y="116" class="g">FCC PART 97 COMPLIANT</text>
+    </g>
+
+    <!-- 6 WALLET PAIR -->
+    <g transform="translate(680 160)"><rect width="320" height="140" rx="6" class="card"/>
+      <g transform="translate(20 30)" class="ico"><rect width="50" height="34" rx="3"/><circle cx="40" cy="17" r="3" fill="#00e5c8"/></g>
+      <text x="92" y="40" class="h">WALLET PAIR</text>
+      <text x="92" y="58" class="s">CyberCard ↔ phone (BLE5)</text>
+      <text x="92" y="74" class="t">JIT signed challenge</text>
+      <text x="92" y="90" class="s">Out-of-band confirm in app</text>
+      <text x="92" y="116" class="g">SE-backed ECDSA P-256</text>
+    </g>
+
+    <!-- 7 TELEMETRY -->
+    <g transform="translate(0 320)"><rect width="320" height="140" rx="6" class="card"/>
+      <g transform="translate(20 26)" class="ico"><rect width="50" height="62" rx="3"/><polyline points="6,52 16,40 26,46 36,28 46,38"/></g>
+      <text x="92" y="40" class="h">DEVICE TELEMETRY</text>
+      <text x="92" y="58" class="s">battery · rssi · tamper</text>
+      <text x="92" y="74" class="t">→ /api/device/telemetry</text>
+      <text x="92" y="90" class="s">Health row per device_id</text>
+      <text x="92" y="116" class="g">PII-FREE · OWNER ONLY</text>
+    </g>
+
+    <!-- 8 OSINT -->
+    <g transform="translate(340 320)"><rect width="320" height="140" rx="6" class="card-g"/>
+      <g transform="translate(20 26)" class="ico-g"><circle cx="25" cy="32" r="20"/><line x1="40" y1="46" x2="50" y2="56"/></g>
+      <text x="92" y="40" class="h">OSINT CONSENT BADGE</text>
+      <text x="92" y="58" class="s">RECON SCOPE: opt-in cards only</text>
+      <text x="92" y="74" class="g">/tap shows consent banner</text>
+      <text x="92" y="90" class="s">Block analytics if declined</text>
+      <text x="92" y="116" class="g">DPIA-ALIGNED · GDPR/CCPA</text>
+    </g>
+
+    <!-- 9 CHARITY -->
+    <g transform="translate(680 320)"><rect width="320" height="140" rx="6" class="card"/>
+      <g transform="translate(20 30)" class="ico"><path d="M25 50 C 5 36 5 14 25 14 C 45 14 45 36 25 50 Z"/></g>
+      <text x="92" y="40" class="h">CHARITY TAP</text>
+      <text x="92" y="58" class="s">$5 micro-pledge per tap</text>
+      <text x="92" y="74" class="t">Stripe one-shot</text>
+      <text x="92" y="90" class="s">Receipt by email · audit</text>
+      <text x="92" y="116" class="g">OPT-IN · NO RECURRING</text>
+    </g>
+  </g>
+
+  <text x="40" y="572" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="3" fill="#6b6b72">EVERY ROW HAS A CONSENT GATE · NO CRED CAPTURE · NO AUTO-EXEC · OWNER MAY DISABLE FROM /DASHBOARD</text>
+</svg>

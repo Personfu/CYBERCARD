@@ -1,0 +1,11 @@
+REM CyberCard harmless contact automation demo
+REM Opens the public CyberCard tap URL and types a visible consent notice.
+REM Authorized-use only. No shell, no download, no execution, no persistence.
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING https://fllc.net/tap?card_id=demo_v1&utm_source=badusb_demo&utm_medium=flipper
+ENTER
+DELAY 1500
+STRING This is a harmless CyberCard contact demo. It opened a public profile URL only. No files were downloaded and no commands were executed.
