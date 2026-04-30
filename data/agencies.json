@@ -1,0 +1,345 @@
+[
+  {
+    "id": "nga", "abbr": "NGA", "name": "National Geospatial-Intelligence Agency",
+    "outerTop": "NATIONAL GEOSPATIAL-INTELLIGENCE AGENCY", "outerBottom": "UNITED STATES OF AMERICA",
+    "motif": "globe", "category": "intelligence",
+    "url": "https://www.nga.mil", "founded": 1996,
+    "mission": "Provides timely, relevant, and accurate geospatial intelligence in support of national security."
+  },
+  {
+    "id": "nro", "abbr": "NRO", "name": "National Reconnaissance Office",
+    "outerTop": "NATIONAL RECONNAISSANCE OFFICE", "outerBottom": "UNITED STATES OF AMERICA",
+    "motif": "globe", "category": "intelligence",
+    "url": "https://www.nro.gov", "founded": 1961,
+    "mission": "Designs, builds, and operates the nation's reconnaissance satellites."
+  },
+  {
+    "id": "odni", "abbr": "ODNI", "name": "Office of the Director of National Intelligence",
+    "outerTop": "OFFICE OF THE DIRECTOR", "outerBottom": "OF NATIONAL INTELLIGENCE",
+    "motif": "eagle", "category": "intelligence",
+    "url": "https://www.dni.gov", "founded": 2004,
+    "mission": "Leads integration of foreign, military, and domestic intelligence across the IC."
+  },
+  {
+    "id": "dia", "abbr": "DIA", "name": "Defense Intelligence Agency",
+    "outerTop": "DEFENSE INTELLIGENCE AGENCY", "outerBottom": "UNITED STATES OF AMERICA",
+    "motif": "torch", "category": "intelligence",
+    "url": "https://www.dia.mil", "founded": 1961,
+    "mission": "Combat support agency producing military intelligence for warfighters, defense policymakers, and force planners."
+  },
+  {
+    "id": "iarpa", "abbr": "IARPA", "name": "Intelligence Advanced Research Projects Activity",
+    "outerTop": "INTELLIGENCE ADVANCED RESEARCH", "outerBottom": "PROJECTS ACTIVITY",
+    "motif": "atom", "category": "intelligence",
+    "url": "https://www.iarpa.gov", "founded": 2006,
+    "mission": "Invests in high-risk, high-payoff research to tackle the hardest challenges facing the IC."
+  },
+  {
+    "id": "jsoc", "abbr": "JSOC", "name": "Joint Special Operations Command",
+    "outerTop": "JOINT SPECIAL OPERATIONS COMMAND", "outerBottom": "UNITED STATES",
+    "motif": "spear", "category": "intelligence",
+    "url": "https://www.socom.mil", "founded": 1980,
+    "mission": "Studies special operations requirements and techniques, ensures interoperability, develops joint training exercises."
+  },
+  {
+    "id": "sac", "abbr": "SAC", "name": "Special Activities Center (CIA)",
+    "outerTop": "SPECIAL ACTIVITIES CENTER", "outerBottom": "CENTRAL INTELLIGENCE AGENCY",
+    "motif": "compass", "category": "intelligence",
+    "url": "https://www.cia.gov", "founded": 1947,
+    "mission": "Covert paramilitary operations and highly sensitive intelligence collection activities."
+  },
+  {
+    "id": "oni", "abbr": "ONI", "name": "Office of Naval Intelligence",
+    "outerTop": "OFFICE OF NAVAL INTELLIGENCE", "outerBottom": "EST. 1882",
+    "motif": "shield", "category": "intelligence",
+    "url": "https://www.oni.navy.mil", "founded": 1882,
+    "mission": "Provides maritime intelligence to support naval operations and national defense."
+  },
+  {
+    "id": "cia", "abbr": "CIA", "name": "Central Intelligence Agency",
+    "outerTop": "CENTRAL INTELLIGENCE AGENCY", "outerBottom": "UNITED STATES OF AMERICA",
+    "motif": "compass", "category": "intelligence",
+    "url": "https://www.cia.gov", "founded": 1947,
+    "mission": "Foreign intelligence collection, analysis, and covert action."
+  },
+  {
+    "id": "uscc", "abbr": "USCYBERCOM", "name": "United States Cyber Command",
+    "outerTop": "UNITED STATES CYBER COMMAND", "outerBottom": "IN GOD WE TRUST",
+    "motif": "eagle", "category": "cyber",
+    "url": "https://www.cybercom.mil", "founded": 2009,
+    "mission": "Directs, synchronizes, and coordinates cyberspace operations and defends DoD networks."
+  },
+  {
+    "id": "nsa", "abbr": "NSA", "name": "National Security Agency",
+    "outerTop": "NATIONAL SECURITY AGENCY", "outerBottom": "UNITED STATES OF AMERICA",
+    "motif": "eagle", "category": "cyber",
+    "url": "https://www.nsa.gov", "founded": 1952,
+    "mission": "Signals intelligence and information assurance for the nation."
+  },
+  {
+    "id": "css", "abbr": "CSS", "name": "Central Security Service",
+    "outerTop": "CENTRAL SECURITY SERVICE", "outerBottom": "UNITED STATES OF AMERICA",
+    "motif": "eagle", "category": "cyber",
+    "url": "https://www.nsa.gov/about/central-security-service/", "founded": 1972,
+    "mission": "Prescribes, produces, and enables cryptology for the DoD."
+  },
+  {
+    "id": "arcyber", "abbr": "ARCYBER", "name": "Army Cyber Command",
+    "outerTop": "U.S. ARMY CYBER COMMAND", "outerBottom": "UNITED STATES ARMY",
+    "motif": "shield", "category": "cyber",
+    "url": "https://www.arcyber.army.mil", "founded": 2010,
+    "mission": "Directs and conducts integrated electronic warfare and cyberspace operations."
+  },
+  {
+    "id": "fcc", "abbr": "FCC", "name": "Fleet Cyber Command",
+    "outerTop": "FLEET CYBER COMMAND", "outerBottom": "UNITED STATES NAVY",
+    "motif": "trident", "category": "cyber",
+    "url": "https://www.navy.mil/Leadership/Commands/", "founded": 2010,
+    "mission": "Executes the full spectrum of cyberspace operations for the Navy."
+  },
+  {
+    "id": "16af", "abbr": "16AF", "name": "Sixteenth Air Force (Air Forces Cyber)",
+    "outerTop": "SIXTEENTH AIR FORCE", "outerBottom": "AIR FORCES CYBER",
+    "motif": "globe", "category": "cyber",
+    "url": "https://www.16af.af.mil", "founded": 2019,
+    "mission": "Integrates multi-domain ISR, cyber, electronic warfare, and information operations."
+  },
+  {
+    "id": "sd6", "abbr": "D6", "name": "Space Delta 6 (USSF Cyber)",
+    "outerTop": "SPACE DELTA 6", "outerBottom": "CYBER OPERATIONS",
+    "motif": "rocket", "category": "cyber",
+    "url": "https://www.spaceforce.mil", "founded": 2020,
+    "mission": "Provides cyberspace operations for U.S. Space Force."
+  },
+  {
+    "id": "jfhqc", "abbr": "JFHQ-C", "name": "Joint Force Headquarters — Cyber",
+    "outerTop": "JOINT FORCE HEADQUARTERS", "outerBottom": "CYBER",
+    "motif": "shield", "category": "cyber",
+    "url": "https://www.cybercom.mil", "founded": 2014,
+    "mission": "Plans and executes cyber operations in support of combatant commands."
+  },
+  {
+    "id": "ssc", "abbr": "SSC", "name": "U.S. Space Systems Command",
+    "outerTop": "U.S. SPACE SYSTEMS COMMAND", "outerBottom": "UNITED STATES SPACE FORCE",
+    "motif": "rocket", "category": "space",
+    "url": "https://www.ssc.spaceforce.mil", "founded": 2021,
+    "mission": "Acquires and delivers resilient, affordable, and mission-ready space capabilities."
+  },
+  {
+    "id": "sda", "abbr": "SDA", "name": "Space Development Agency",
+    "outerTop": "SPACE DEVELOPMENT AGENCY", "outerBottom": "DEPARTMENT OF DEFENSE",
+    "motif": "satellite", "category": "space",
+    "url": "https://www.sda.mil", "founded": 2019,
+    "mission": "Rapidly develops and delivers a proliferated warfighter space architecture."
+  },
+  {
+    "id": "mda", "abbr": "MDA", "name": "Missile Defense Agency",
+    "outerTop": "MISSILE DEFENSE AGENCY", "outerBottom": "DEPARTMENT OF DEFENSE",
+    "motif": "rocket", "category": "space",
+    "url": "https://www.mda.mil", "founded": 2002,
+    "mission": "Develops, tests, and fields an integrated, layered missile defense system."
+  },
+  {
+    "id": "nsic", "abbr": "NSIC", "name": "National Space Intelligence Center",
+    "outerTop": "NATIONAL SPACE INTELLIGENCE CENTER", "outerBottom": "UNITED STATES SPACE FORCE",
+    "motif": "satellite", "category": "space",
+    "url": "https://www.spaceforce.mil", "founded": 2021,
+    "mission": "Provides all-source intelligence on foreign space and counterspace capabilities."
+  },
+  {
+    "id": "afrl", "abbr": "AFRL", "name": "Air Force Research Laboratory",
+    "outerTop": "AIR FORCE RESEARCH LABORATORY", "outerBottom": "UNITED STATES AIR FORCE",
+    "motif": "rocket", "category": "space",
+    "url": "https://www.afrl.af.mil", "founded": 1997,
+    "mission": "Leading the discovery, development, and integration of affordable warfighting technologies."
+  },
+  {
+    "id": "darpa", "abbr": "DARPA", "name": "Defense Advanced Research Projects Agency",
+    "outerTop": "DEFENSE ADVANCED RESEARCH", "outerBottom": "PROJECTS AGENCY",
+    "motif": "globe", "category": "space",
+    "url": "https://www.darpa.mil", "founded": 1958,
+    "mission": "Makes pivotal investments in breakthrough technologies for national security."
+  },
+  {
+    "id": "nasa", "abbr": "NASA", "name": "National Aeronautics and Space Administration",
+    "outerTop": "NATIONAL AERONAUTICS", "outerBottom": "AND SPACE ADMINISTRATION",
+    "motif": "rocket", "category": "space",
+    "url": "https://www.nasa.gov", "founded": 1958,
+    "mission": "Exploring the universe for the benefit of all humanity."
+  },
+  {
+    "id": "stratcom", "abbr": "USSTRATCOM", "name": "U.S. Strategic Command",
+    "outerTop": "UNITED STATES STRATEGIC COMMAND", "outerBottom": "PEACE IS OUR PROFESSION",
+    "motif": "shield", "category": "nuclear",
+    "url": "https://www.stratcom.mil", "founded": 1992,
+    "mission": "Deters strategic attack and employs forces as directed to guarantee U.S. and allied freedom of action."
+  },
+  {
+    "id": "afgsc", "abbr": "AFGSC", "name": "Air Force Global Strike Command",
+    "outerTop": "AIR FORCE GLOBAL STRIKE COMMAND", "outerBottom": "UNITED STATES AIR FORCE",
+    "motif": "eagle", "category": "nuclear",
+    "url": "https://www.afgsc.af.mil", "founded": 2009,
+    "mission": "Organizes, trains, equips, and maintains two-thirds of the nuclear triad."
+  },
+  {
+    "id": "ssp", "abbr": "SSP", "name": "Naval Strategic Systems Programs",
+    "outerTop": "NAVAL STRATEGIC SYSTEMS PROGRAMS", "outerBottom": "UNITED STATES NAVY",
+    "motif": "trident", "category": "nuclear",
+    "url": "https://www.ssp.navy.mil", "founded": 1955,
+    "mission": "Develops and maintains the Navy's fleet ballistic missile and strategic weapons system."
+  },
+  {
+    "id": "nnsa", "abbr": "NNSA", "name": "National Nuclear Security Administration",
+    "outerTop": "NATIONAL NUCLEAR SECURITY", "outerBottom": "ADMINISTRATION",
+    "motif": "atom", "category": "nuclear",
+    "url": "https://www.energy.gov/nnsa", "founded": 2000,
+    "mission": "Enhances national security through the military application of nuclear science."
+  },
+  {
+    "id": "dtra", "abbr": "DTRA", "name": "Defense Threat Reduction Agency",
+    "outerTop": "DEFENSE THREAT REDUCTION AGENCY", "outerBottom": "DEPARTMENT OF DEFENSE",
+    "motif": "atom", "category": "nuclear",
+    "url": "https://www.dtra.mil", "founded": 1998,
+    "mission": "Safeguards America and its allies from weapons of mass destruction."
+  },
+  {
+    "id": "usms", "abbr": "USMS", "name": "U.S. Marshals Service",
+    "outerTop": "UNITED STATES MARSHALS SERVICE", "outerBottom": "EST. 1789",
+    "motif": "star", "category": "lawenf",
+    "url": "https://www.usmarshals.gov", "founded": 1789,
+    "mission": "Enforcement arm of the federal courts and the nation's oldest federal law enforcement agency."
+  },
+  {
+    "id": "dss", "abbr": "DSS", "name": "Diplomatic Security Service",
+    "outerTop": "DIPLOMATIC SECURITY SERVICE", "outerBottom": "U.S. DEPARTMENT OF STATE",
+    "motif": "star", "category": "lawenf",
+    "url": "https://www.state.gov/bureaus-offices/under-secretary-for-management/bureau-of-diplomatic-security/", "founded": 1916,
+    "mission": "Provides a safe and secure environment for the conduct of U.S. foreign policy."
+  },
+  {
+    "id": "fps", "abbr": "FPS", "name": "Federal Protective Service",
+    "outerTop": "FEDERAL PROTECTIVE SERVICE", "outerBottom": "POLICE",
+    "motif": "shield", "category": "lawenf",
+    "url": "https://www.dhs.gov/federal-protective-service", "founded": 1971,
+    "mission": "Protects federal facilities, their occupants, and visitors."
+  },
+  {
+    "id": "oig", "abbr": "OIG", "name": "Office of Inspector General (DOJ)",
+    "outerTop": "OFFICE OF INSPECTOR GENERAL", "outerBottom": "UNITED STATES OF JUSTICE",
+    "motif": "scales", "category": "lawenf",
+    "url": "https://oig.justice.gov", "founded": 1988,
+    "mission": "Detects and deters waste, fraud, abuse, and misconduct in DOJ programs."
+  },
+  {
+    "id": "bis", "abbr": "BIS", "name": "Bureau of Industry and Security",
+    "outerTop": "BUREAU OF INDUSTRY", "outerBottom": "AND SECURITY",
+    "motif": "globe", "category": "lawenf",
+    "url": "https://www.bis.doc.gov", "founded": 1987,
+    "mission": "Advances U.S. national security and foreign policy goals through export controls."
+  },
+  {
+    "id": "ofac", "abbr": "OFAC", "name": "Office of Foreign Assets Control",
+    "outerTop": "OFFICE OF FOREIGN", "outerBottom": "ASSETS CONTROL",
+    "motif": "scales", "category": "treasury",
+    "url": "https://ofac.treasury.gov", "founded": 1950,
+    "mission": "Administers and enforces economic and trade sanctions programs."
+  },
+  {
+    "id": "fincen", "abbr": "FinCEN", "name": "Financial Crimes Enforcement Network",
+    "outerTop": "FINANCIAL CRIMES", "outerBottom": "ENFORCEMENT NETWORK",
+    "motif": "eagle", "category": "treasury",
+    "url": "https://www.fincen.gov", "founded": 1990,
+    "mission": "Safeguards the financial system from illicit use and combats money laundering."
+  },
+  {
+    "id": "irsci", "abbr": "IRS-CI", "name": "IRS Criminal Investigation",
+    "outerTop": "INTERNAL REVENUE SERVICE", "outerBottom": "CRIMINAL INVESTIGATION",
+    "motif": "badge", "category": "treasury",
+    "url": "https://www.irs.gov/compliance/criminal-investigation", "founded": 1919,
+    "mission": "Investigates potential criminal violations of the Internal Revenue Code and related financial crimes."
+  },
+  {
+    "id": "usss", "abbr": "USSS", "name": "U.S. Secret Service",
+    "outerTop": "UNITED STATES SECRET SERVICE", "outerBottom": "EST. 1865",
+    "motif": "star", "category": "treasury",
+    "url": "https://www.secretservice.gov", "founded": 1865,
+    "mission": "Protects national leaders and investigates financial crimes."
+  },
+  {
+    "id": "mint", "abbr": "MINT", "name": "United States Mint",
+    "outerTop": "UNITED STATES MINT", "outerBottom": "EST. 1792",
+    "motif": "scales", "category": "treasury",
+    "url": "https://www.usmint.gov", "founded": 1792,
+    "mission": "Produces circulating coinage for commerce and commemorative coins."
+  },
+  {
+    "id": "cisa", "abbr": "CISA", "name": "Cybersecurity and Infrastructure Security Agency",
+    "outerTop": "CYBERSECURITY AND", "outerBottom": "INFRASTRUCTURE SECURITY",
+    "motif": "shield", "category": "homeland",
+    "url": "https://www.cisa.gov", "founded": 2018,
+    "mission": "Leads the national effort to understand, manage, and reduce risk to cyber and physical infrastructure."
+  },
+  {
+    "id": "tsa", "abbr": "TSA", "name": "Transportation Security Administration",
+    "outerTop": "TRANSPORTATION SECURITY", "outerBottom": "ADMINISTRATION",
+    "motif": "eagle", "category": "homeland",
+    "url": "https://www.tsa.gov", "founded": 2001,
+    "mission": "Protects the nation's transportation systems to ensure freedom of movement for people and commerce."
+  },
+  {
+    "id": "fema", "abbr": "FEMA", "name": "Federal Emergency Management Agency",
+    "outerTop": "FEDERAL EMERGENCY", "outerBottom": "MANAGEMENT AGENCY",
+    "motif": "star", "category": "homeland",
+    "url": "https://www.fema.gov", "founded": 1979,
+    "mission": "Helps people before, during, and after disasters."
+  },
+  {
+    "id": "cbp", "abbr": "CBP", "name": "U.S. Customs and Border Protection",
+    "outerTop": "U.S. CUSTOMS AND", "outerBottom": "BORDER PROTECTION",
+    "motif": "eagle", "category": "homeland",
+    "url": "https://www.cbp.gov", "founded": 2003,
+    "mission": "Safeguards America's borders, protecting the public from dangerous people and materials."
+  },
+  {
+    "id": "ice", "abbr": "ICE", "name": "Immigration and Customs Enforcement",
+    "outerTop": "U.S. IMMIGRATION AND", "outerBottom": "CUSTOMS ENFORCEMENT",
+    "motif": "eagle", "category": "homeland",
+    "url": "https://www.ice.gov", "founded": 2003,
+    "mission": "Enforces federal laws governing border control, customs, trade, and immigration."
+  },
+  {
+    "id": "nist", "abbr": "NIST", "name": "National Institute of Standards and Technology",
+    "outerTop": "NATIONAL INSTITUTE OF", "outerBottom": "STANDARDS AND TECHNOLOGY",
+    "motif": "gear", "category": "research",
+    "url": "https://www.nist.gov", "founded": 1901,
+    "mission": "Promotes U.S. innovation and industrial competitiveness through measurement science."
+  },
+  {
+    "id": "sandia", "abbr": "SNL", "name": "Sandia National Laboratories",
+    "outerTop": "SANDIA NATIONAL LABORATORIES", "outerBottom": "EST. 1949",
+    "motif": "flame", "category": "research",
+    "url": "https://www.sandia.gov", "founded": 1949,
+    "mission": "Develops science-based technologies that support national security."
+  },
+  {
+    "id": "lanl", "abbr": "LANL", "name": "Los Alamos National Laboratory",
+    "outerTop": "LOS ALAMOS", "outerBottom": "NATIONAL LABORATORY",
+    "motif": "atom", "category": "research",
+    "url": "https://www.lanl.gov", "founded": 1943,
+    "mission": "Delivers science and technology to ensure the safety, security, and reliability of the U.S. nuclear deterrent."
+  },
+  {
+    "id": "llnl", "abbr": "LLNL", "name": "Lawrence Livermore National Laboratory",
+    "outerTop": "LAWRENCE LIVERMORE", "outerBottom": "NATIONAL LABORATORY",
+    "motif": "atom", "category": "research",
+    "url": "https://www.llnl.gov", "founded": 1952,
+    "mission": "Strengthens the United States' security through development and application of world-class science."
+  },
+  {
+    "id": "nsf", "abbr": "NSF", "name": "National Science Foundation",
+    "outerTop": "NATIONAL SCIENCE FOUNDATION", "outerBottom": "UNITED STATES OF AMERICA",
+    "motif": "gear", "category": "research",
+    "url": "https://www.nsf.gov", "founded": 1950,
+    "mission": "Promotes the progress of science; advances the national health, prosperity, and welfare."
+  }
+]

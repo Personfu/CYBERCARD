@@ -89,7 +89,7 @@ CYBERCARD/
 
 ```mermaid
 flowchart TD
-  Card[Premium Metal CyberCard\nNTAG216 + QR + AR marker] --> Trigger[NFC / QR / AR Trigger]
+  Card["Premium Metal CyberCard<br/>NTAG216 + QR + AR marker"] --> Trigger[NFC / QR / AR Trigger]
   Trigger --> Tap[/tap?card_id=metal_v1]
   Tap --> Api[Next.js API Layer]
   Api --> DB[(Supabase Postgres\nRLS + audit_events)]
@@ -186,9 +186,9 @@ CyberFlipper does not replace Flipper Zero. It augments it and documents safe, r
 ```mermaid
 flowchart LR
   FZ[Flipper Zero] --> GPIO[GPIO Header]
-  GPIO --> WDB[Wi-Fi Dev Board\nESP32-S2/S3]
-  WDB --> AP[Owned Lab AP\nCyberCard-Setup]
-  WDB --> Portal[Consent Portal\nprofile + vCard + telemetry notice]
+  GPIO --> WDB["Wi-Fi Dev Board<br/>ESP32-S2/S3"]
+  WDB --> AP["Owned Lab AP<br/>CyberCard-Setup"]
+  WDB --> Portal["Consent Portal<br/>profile + vCard + telemetry notice"]
   Portal --> TapAPI[/api/tap]
   TapAPI --> Audit[(Supabase audit_events)]
 ```
@@ -550,7 +550,7 @@ quarter-wave antenna L ~= lambda / 4
 ```mermaid
 sequenceDiagram
   participant Human as Contact
-  participant Card as CyberCard<br/>NFC/QR/AR
+  participant Card as CyberCard NFC/QR/AR
   participant Tap as /tap Web App
   participant API as API Layer
   participant DB as Supabase

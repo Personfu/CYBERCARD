@@ -3,9 +3,6 @@ name: Deploy public-site to GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - 'public-site/**'
-      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
 # Required for the official deploy-pages action
