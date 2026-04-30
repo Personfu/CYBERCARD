@@ -10,7 +10,7 @@ Vector renders + schematics rendered in the FLLC.net theme palette (`#0a0a0c` / 
 
 | Concept | Render |
 |---|---|
-| Front concept (metal, NFC tap target, brushed Ti) | ![front](docs/assets/cybercard-front-concept.svg) |
+| Front concept (metal, NFC tap target, brushed Ti) | ![front](docs/assets/john-doe-card-laser-front.svg) |
 | Back schematic (4-turn NFC spiral + QR fallback + B-field) | ![back](docs/assets/cybercard-back-schematic.svg) |
 | Mechanical exploded view (5-layer stack, BOM highlights) | ![exploded](docs/assets/cybercard-exploded.svg) |
 | 4-layer PCB stackup (impedance + via map) | ![pcb](docs/assets/cybercard-pcb-stackup.svg) |
@@ -297,7 +297,6 @@ The project includes harmless examples in [flipper/](flipper) and [payloads/scan
 | IR demo | `flipper/infrared/cybercard_presentation_remote.ir` | Placeholder for owned presentation clicker workflow |
 | Wi-Fi portal page | `payloads/scannables/wifi_consent_portal.html` | Consent-first captive portal handoff |
 | QR matrix | `payloads/scannables/SCANNABLES.md` | QR/NFC/AR URL patterns and event mapping |
-| vCard automation | `payloads/scannables/preston_furulie.vcf` | Contact card sample |
 
 ## Flipper Wi-Fi Board and Payload Extensibility
 
