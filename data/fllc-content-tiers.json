@@ -1,0 +1,58 @@
+{
+  "schema": "fllc.cybercard.content-tiers.v1",
+  "updatedUtc": "2026-06-18T00:00:00Z",
+  "project": "CyberCard",
+  "mainSite": "https://fllc.net",
+  "accountGateway": "https://www.fllc.net/login?provider=google&redirect=/members",
+  "split": {
+    "free": 50,
+    "basic": 15,
+    "premium": 35
+  },
+  "free": [
+    {
+      "title": "CyberCard NFC identity primer",
+      "deliverable": "public explainer + SVG system diagram",
+      "boundary": "owned cards, public profile links, no credential capture"
+    },
+    {
+      "title": "Tap event anatomy",
+      "deliverable": "safe /tap flow walkthrough",
+      "boundary": "browser metadata minimization and consent banner"
+    },
+    {
+      "title": "RF and NFC lab ethics",
+      "deliverable": "field card for owned test tags and demo readers",
+      "boundary": "no badge cloning or unauthorized readers"
+    }
+  ],
+  "basic": [
+    {
+      "title": "Tap funnel review pack",
+      "deliverable": "report template for tap conversion and routing quality",
+      "boundary": "aggregate analytics only"
+    },
+    {
+      "title": "Hardware bring-up checklist",
+      "deliverable": "BOM, continuity, firmware version, smoke-test worksheet",
+      "boundary": "owned prototype boards"
+    }
+  ],
+  "premium": [
+    {
+      "title": "Interactive CyberCard digital twin",
+      "deliverable": "Three.js/WebGL layer-stack visualization concept",
+      "boundary": "synthetic board model and public-safe metadata"
+    },
+    {
+      "title": "FLLC event lead operations kit",
+      "deliverable": "member-only dashboard plan and source-backed reporting deck",
+      "boundary": "opt-in contacts and clear retention policy"
+    },
+    {
+      "title": "Advanced NFC/RF defensive workshop",
+      "deliverable": "guided lab sequence for owned tags, logs, and mitigations",
+      "boundary": "no credential theft, no unauthorized access, no cloning instructions"
+    }
+  ]
+}
