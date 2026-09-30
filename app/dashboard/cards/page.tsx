@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic'
 // CFO panel — org billing health + tap stream analytics
 // Reads from org_billing_health view + tap_events realtime
 
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { createBrowserClient } from '@supabase/ssr'
 
 type SB = ReturnType<typeof createBrowserClient>
@@ -49,7 +49,6 @@ const PLAN_PRICE: Record<string, number> = {
 
 const neon = '#00e5c8'
 const gold = '#c9a84c'
-const red  = '#ff3b3b'
 
 function fmt(cents: number) {
   return `$${(cents / 100).toLocaleString('en-US', { minimumFractionDigits: 0 })}`
@@ -61,10 +60,39 @@ export default function CardsDashboard() {
   const [uniqueFps, setUniqueFps] = useState(0)
   const [mrr, setMrr]             = useState(0)
   const [loading, setLoading]     = useState(true)
+  const supabaseConfigured = Boolean(
+    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  )
+
+  const load = useCallback(async () => {
+    const supabase = getSupabase()
+    if (!supabase) return
+    try {
+      const [billingRes, tapsRes, fpRes] = await Promise.all([
+        supabase.from('org_billing_health').select('*'),
+        supabase.from('tap_events').select('id,card_id,geo_city,geo_country,utm_source,is_first_tap,tapped_at')
+          .order('tapped_at', { ascending: false }).limit(50),
+        supabase.from('contacts').select('id', { count: 'exact', head: true }),
+      ])
+
+      if (billingRes.data) {
+        let totalMrr = 0
+        for (const row of billingRes.data as BillingRow[]) {
+          totalMrr += (PLAN_PRICE[row.plan] ?? 0) * (row.paying ?? 0)
+        }
+        setBilling(billingRes.data as BillingRow[])
+        setMrr(totalMrr)
+      }
+      if (tapsRes.data) setTaps(tapsRes.data as TapRow[])
+      if (fpRes.count !== null) setUniqueFps(fpRes.count)
+    } finally {
+      setLoading(false)
+    }
+  }, [])
 
   useEffect(() => {
     const supabase = getSupabase()
-    if (!supabase) { setLoading(false); return }
+    if (!supabase) return
     void load()
 
     // Realtime tap stream
@@ -78,36 +106,25 @@ export default function CardsDashboard() {
       .subscribe()
 
     return () => { supabase.removeChannel(channel) }
-  }, [])
-
-  async function load() {
-    const supabase = getSupabase()
-    if (!supabase) return
-    const [billingRes, tapsRes, fpRes] = await Promise.all([
-      supabase.from('org_billing_health').select('*'),
-      supabase.from('tap_events').select('id,card_id,geo_city,geo_country,utm_source,is_first_tap,tapped_at')
-        .order('tapped_at', { ascending: false }).limit(50),
-      supabase.from('contacts').select('id', { count: 'exact', head: true }),
-    ])
-
-    if (billingRes.data) {
-      // Compute MRR from plan rows
-      let totalMrr = 0
-      for (const row of billingRes.data as BillingRow[]) {
-        totalMrr += (PLAN_PRICE[row.plan] ?? 0) * (row.paying ?? 0)
-      }
-      setBilling(billingRes.data as BillingRow[])
-      setMrr(totalMrr)
-    }
-    if (tapsRes.data)    setTaps(tapsRes.data as TapRow[])
-    if (fpRes.count !== null) setUniqueFps(fpRes.count)
-    setLoading(false)
-  }
+  }, [load])
 
   const totalActive = billing.reduce((s, r) => s + (r.active_orgs ?? 0), 0)
   const totalPaying = billing.reduce((s, r) => s + (r.paying ?? 0), 0)
   const mrrTarget   = 1500000   // $15K in cents
   const mrrPct      = Math.min(100, Math.round((mrr / mrrTarget) * 100))
+
+  if (!supabaseConfigured) {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-[#06070a] p-6 text-[#e8e4dc]">
+        <section role="status" className="max-w-lg border border-[#c9a84c]/40 bg-black/50 p-6 font-mono">
+          <h1 className="mb-3 text-sm uppercase tracking-[0.2em] text-[#c9a84c]">Dashboard unavailable</h1>
+          <p className="text-xs leading-6 text-[#a4a0a0]">
+            Configure the public Supabase URL and anonymous key to load account data. No sample metrics are shown.
+          </p>
+        </section>
+      </main>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-[#06070a] text-[#e8e4dc] font-mono p-6">

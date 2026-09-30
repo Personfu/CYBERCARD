@@ -401,10 +401,14 @@ Each page is designed to be replicable by NFC, QR, AR, Wi-Fi portal, and USB HID
 
 ### 0. Install And Run
 
+Use Node.js 20.9 or newer. Install the locked dependencies with `npm ci`; the
+repository's quality workflow runs dependency audit, lint, type-check, and a
+production build on every pull request and push.
+
 ```bash
 cd CYBERCARD
 cp .env.example .env.local
-npm install
+npm ci
 npm run dev
 ```
 

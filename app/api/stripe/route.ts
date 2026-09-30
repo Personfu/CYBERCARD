@@ -120,7 +120,7 @@ export async function POST(req: NextRequest) {
       sig,
       process.env.STRIPE_WEBHOOK_SECRET!,
     )
-  } catch (err) {
+  } catch {
     return NextResponse.json({ error: 'bad signature' }, { status: 400 })
   }
 
@@ -132,7 +132,7 @@ export async function POST(req: NextRequest) {
       const email   = session.customer_details?.email ?? ''
       const custId  = (session.customer as string) ?? ''
       const subId   = (session.subscription as string) ?? ''
-      const priceId = (session as any).metadata?.price_id ?? null
+      const priceId = session.metadata?.price_id ?? null
       const plan    = planFromPriceId(priceId)
       await provisionOrg(supabase, email, custId, subId, plan)
       break

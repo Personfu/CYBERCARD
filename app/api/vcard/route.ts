@@ -5,7 +5,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
 
 function isValidId(s: string | null): boolean {
   if (!s) return false
@@ -30,7 +30,12 @@ function buildVcf(card: {
   if (card.owner_email)   lines.push(`EMAIL;TYPE=WORK,INTERNET:${card.owner_email}`)
   if (card.linkedin_url)  lines.push(`URL;TYPE=LinkedIn:${card.linkedin_url}`)
   lines.push('X-CYBERCARD:v1')
-  lines.push(`REV:${new Date().toISOString().replace(/[-:.]/g, '').slice(0, 15)}Z`)
+  const revision = new Date().toISOString()
+    .replaceAll('-', '')
+    .replaceAll(':', '')
+    .replaceAll('.', '')
+    .slice(0, 15)
+  lines.push(`REV:${revision}Z`)
   lines.push('END:VCARD')
   return lines.join('\r\n')
 }
