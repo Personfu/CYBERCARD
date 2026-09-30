@@ -22,7 +22,6 @@ function getArg(flag, fallback = '') {
 
 const rawUrl = getArg('--url', 'https://fllc.net/tap?card_id=metal_v1&utm_source=nfc&utm_medium=card')
 const cardId = getArg('--card-id', 'metal_v1')
-const dryRun = args.includes('--dry-run')
 
 // URI prefix table (NFC URI Record type)
 const URI_PREFIXES = {

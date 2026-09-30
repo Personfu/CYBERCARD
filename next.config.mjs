@@ -2,8 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  experimental: {
-    typedRoutes: false
+  // Keep Turbopack's project scan inside this repo instead of walking into
+  // unrelated parent workspaces and lockfiles.
+  turbopack: {
+    root: process.cwd()
   }
 }
 

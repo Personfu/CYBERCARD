@@ -37,28 +37,26 @@ export default function SplashGate({ children, durationMs = 2200 }: Props) {
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-
-    if (SKIP_PATHS.some(p => pathname.startsWith(p))) {
-      setHidden(true)
-      return
-    }
-    if (params?.get('nosplash') === '1') {
-      setHidden(true)
-      return
-    }
-    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
-      setHidden(true)
-      return
-    }
-    try {
-      if (window.sessionStorage.getItem(SESSION_KEY) === '1') {
+    const frame = requestAnimationFrame(() => {
+      if (SKIP_PATHS.some(p => pathname.startsWith(p)) || params?.get('nosplash') === '1') {
         setHidden(true)
         return
       }
-    } catch {
-      /* sessionStorage may be blocked; fall through to show splash */
-    }
-    setHidden(false)
+      if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+        setHidden(true)
+        return
+      }
+      try {
+        if (window.sessionStorage.getItem(SESSION_KEY) === '1') {
+          setHidden(true)
+          return
+        }
+      } catch {
+        /* sessionStorage may be blocked; fall through to show splash */
+      }
+      setHidden(false)
+    })
+    return () => cancelAnimationFrame(frame)
   }, [pathname, params])
 
   if (hidden === null) return null // SSR / initial paint guard

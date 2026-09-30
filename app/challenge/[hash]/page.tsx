@@ -50,12 +50,12 @@ export default function ChallengePage() {
         <div className="flex items-center gap-2 mb-6">
           <div className="w-1.5 h-1.5 rounded-full bg-[#c9a84c] shadow-[0_0_8px_rgba(201,168,76,0.7)] animate-pulse" />
           <span className="text-[9px] tracking-[3px] uppercase text-[#c9a84c]">
-            // back-of-card challenge
+            {'// back-of-card challenge'}
           </span>
         </div>
 
         <h1 className="text-3xl mb-2 text-white tracking-[3px]" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
-          PROVE YOU'RE WORTH
+          PROVE YOU&apos;RE WORTH
           <br />
           A FOLLOW-UP
         </h1>

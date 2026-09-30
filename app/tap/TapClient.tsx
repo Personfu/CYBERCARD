@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { AgencyLoader } from '../components/AgencyLoader'
 import type { CardConfig } from './page'
 
@@ -16,13 +16,7 @@ export default function TapClient({ config, utm }: TapClientProps) {
   const [tapId, setTapId] = useState<string | null>(null)
   const fired = useRef(false)
 
-  useEffect(() => {
-    if (fired.current) return
-    fired.current = true
-    void fireTapEvent()
-  }, [])
-
-  async function fireTapEvent() {
+  const fireTapEvent = useCallback(async () => {
     try {
       const fingerprint = {
         tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
@@ -58,7 +52,13 @@ export default function TapClient({ config, utm }: TapClientProps) {
     } catch {
       setState('error')
     }
-  }
+  }, [config, utm])
+
+  useEffect(() => {
+    if (fired.current) return
+    fired.current = true
+    void fireTapEvent()
+  }, [fireTapEvent])
 
   if (state === 'loading') {
     return (

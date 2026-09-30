@@ -23,7 +23,7 @@
  * -------------------------------------------------------------------
  */
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 /* ------------------------------------------------------------------ */
 /* Agency catalog                                                      */
@@ -167,27 +167,6 @@ function CircularText({
         </textPath>
       </text>
     </>
-  )
-}
-
-function Stars({ count = 13, radius = 78 }: { count?: number; radius?: number }) {
-  const cx = 100, cy = 100
-  return (
-    <g>
-      {Array.from({ length: count }).map((_, i) => {
-        const a = (Math.PI * 2 * i) / count - Math.PI / 2
-        const x = cx + Math.cos(a) * radius
-        const y = cy + Math.sin(a) * radius
-        return (
-          <polygon
-            key={i}
-            points={starPoints(x, y, 1.6, 3.6, 5)}
-            fill="#e8e4dc"
-            opacity={0.85}
-          />
-        )
-      })}
-    </g>
   )
 }
 
@@ -365,7 +344,7 @@ function ScalesMotif() {
 
 function GearMotif() {
   const teeth = 12
-  const ri = 18, ro = 28, tw = 5
+  const ri = 18, ro = 28
   const pts: string[] = []
   for (let i = 0; i < teeth * 2; i++) {
     const a = (Math.PI * i) / teeth
@@ -497,8 +476,6 @@ export function AgencyLoader({
   inline = false
 }: AgencyLoaderProps) {
   const [progress, setProgress] = useState(0)
-  const startedAt = useRef<number>(Date.now())
-
   const seals = useMemo(() => {
     let list = AGENCIES
     if (categories?.length) list = list.filter(a => categories.includes(a.category))
@@ -509,9 +486,10 @@ export function AgencyLoader({
   // tick progress bar
   useEffect(() => {
     if (!minDurationMs) return
+    const startedAt = Date.now()
     let raf = 0
     const tick = () => {
-      const p = Math.min(1, (Date.now() - startedAt.current) / minDurationMs)
+      const p = Math.min(1, (Date.now() - startedAt) / minDurationMs)
       setProgress(p)
       if (p < 1) raf = requestAnimationFrame(tick)
       else onDone?.()
@@ -561,7 +539,7 @@ export function AgencyLoader({
             marginBottom: '0.4rem'
           }}
         >
-          // CYBERCARD SYSTEM BOOT //
+          {'// CYBERCARD SYSTEM BOOT //'}
         </div>
         <div
           style={{
