@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import TapClient from './TapClient'
 
 interface TapPageProps {
-  searchParams: { card_id?: string; utm_source?: string; utm_medium?: string }
+  searchParams: Promise<{ card_id?: string; utm_source?: string; utm_medium?: string }>
 }
 
 export interface CardConfig {
@@ -57,7 +57,8 @@ async function resolveCard(cardId: string): Promise<CardConfig> {
 }
 
 export default async function TapPage({ searchParams }: TapPageProps) {
-  const cardId = searchParams.card_id ?? 'metal_v1'
+  const params = await searchParams
+  const cardId = params.card_id ?? 'metal_v1'
   const config = await resolveCard(cardId)
 
   if (config.redirect_url && config.card_type === 'scan_v1') {
@@ -68,7 +69,7 @@ export default async function TapPage({ searchParams }: TapPageProps) {
     <Suspense fallback={<TapSkeleton />}>
       <TapClient
         config={config}
-        utm={{ source: searchParams.utm_source, medium: searchParams.utm_medium }}
+        utm={{ source: params.utm_source, medium: params.utm_medium }}
       />
     </Suspense>
   )
