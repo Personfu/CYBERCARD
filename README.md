@@ -1014,3 +1014,6 @@ Diagrams referenced from `docs/assets/`. Where an asset is not yet committed, th
 
 For polished diagrams, regenerate via `npx @mermaid-js/mermaid-cli -i docs/diagrams/<name>.mmd -o docs/assets/<name>.svg`.
 
+## November 2026 security maintenance
+
+The application uses patched Next.js 15.5.28 with a compatible fixed PostCSS override. The tap route awaits search parameters as required by the framework request API. The production build passed after migration. Use the committed lockfile and verify contact-card resolution, redirects, and download behavior in a configured preview before deploying. The server Supabase client requires a server-only service-role key; never expose that key through NEXT_PUBLIC variables. Other audited dependency findings remain open and are separate from the framework RCE fix.

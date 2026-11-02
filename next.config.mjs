@@ -2,9 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  experimental: {
-    typedRoutes: false
-  }
+  typedRoutes: false
 }
 
 export default nextConfig
